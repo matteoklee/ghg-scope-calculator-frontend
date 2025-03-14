@@ -57,14 +57,14 @@ export default {
     return {
       openStates: [true, true, false],
       homeItems: [
-        { label: "Datenerfassung", title: "Datenerfassung", icon: SquarePen, path: "/" },
-        { label: "Ergebnisse", title: "Ergebnisse", icon: List, path: "/about" },
+        { label: "Datenerfassung", title: "Datenerfassung", icon: SquarePen, path: "/collect" },
+        { label: "Ergebnisse", title: "Ergebnisse", icon: List, path: "/results" },
         { label: "Dashboard", title: "Dashboard", icon: ChartBar, path: "/dashboard" },
       ],
       dashboardItems: [
-        { label: "Statistiken", title: "Statistiken", icon: ChartBar, path: "/stats" },
-        { label: "Nachweise", title: "Nachweise", icon: Files, path: "/files" },
-        { label: "Zertifizierungen", title: "Zertifizierungen", icon: ShieldCheck, path: "/certs" },
+        { label: "Statistiken", title: "Statistiken", icon: ChartBar, path: "/dashboard/stats" },
+        { label: "Nachweise", title: "Nachweise", icon: Files, path: "/dashboard/evidence" },
+        { label: "Zertifizierungen", title: "Zertifizierungen", icon: ShieldCheck, path: "/dashboard/certs" },
       ],
       scopeItems: [
         {
@@ -155,7 +155,7 @@ export default {
             <div v-if="!scope.items">
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <router-link to="/" class="flex items-center bg-gray-100 hover:bg-gray-200">
+                  <router-link :to="scope.path" class="flex items-center bg-gray-100 hover:bg-gray-200">
                     <component class="mr-2 h-4 w-4 flex-shrink-0"  :is="scope.icon" />
                     <span class="truncate text-sm">{{scope.title}}</span>
                   </router-link>

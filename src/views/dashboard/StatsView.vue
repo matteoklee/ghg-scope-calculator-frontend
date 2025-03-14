@@ -1,11 +1,13 @@
 <script>
 export default {
-  name: 'DashboardView'
+  name: 'StatsView'
 }
 </script>
 
 <template>
-  <router-view></router-view>
+  <div class="">
+    <h1>This is the stats page</h1>
+  </div>
 </template>
 
 <style scoped>

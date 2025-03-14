@@ -40,8 +40,9 @@ name: "AppHeader",
       console.log('login');
     },
     isActive(path) {
-      return this.route.path === path;
+      return this.route.path === path || (path !== '/' && this.route.path.startsWith(path));
     }
+
   },
   computed: {
   }
@@ -60,9 +61,9 @@ name: "AppHeader",
           <Settings class="h-5 w-5" />
         </Button>
 
-        <DropdownMenu v-if="isAuthenticated">
+        <DropdownMenu v-if="isAuthenticated" class="">
           <DropdownMenuTrigger as="div">
-            <Button variant="ghost" class="flex items-center space-x-2">
+            <Button variant="outline" class="flex items-center">
               <User class="w-5 h-5" />
               <span>{{ userName }}</span>
             </Button>
