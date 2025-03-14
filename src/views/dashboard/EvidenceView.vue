@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'EvidenceView'
-}
+  name: 'EvidenceView',
+};
 </script>
 
 <template>
@@ -10,6 +10,4 @@ export default {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,7 +1,7 @@
 <script>
 export default {
-name: "AppFooter"
-}
+  name: 'AppFooter',
+};
 </script>
 
 <template>
@@ -9,7 +9,8 @@ name: "AppFooter"
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
       <!-- Copyright -->
       <span class="text-sm text-gray-400">
-        © 2025 <a href="/" class="hover:underline text-gray-600">Emissionen-Berechnen.de</a>. Alle Rechte vorbehalten.
+        © 2025 <a href="/" class="hover:underline text-gray-600">Emissionen-Berechnen.de</a>. Alle
+        Rechte vorbehalten.
       </span>
 
       <!-- Links -->
@@ -28,6 +29,4 @@ name: "AppFooter"
   </footer>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

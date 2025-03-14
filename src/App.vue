@@ -1,11 +1,11 @@
 <script setup>
-import AppFooter from '@/components/navigation/AppFooter.vue'
-import AppHeader from '@/components/navigation/AppHeader.vue'
-import AppSidebar from '@/components/navigation/AppSidebar.vue'
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar/index.js'
-import { useRoute } from 'vue-router'
+import AppFooter from '@/components/navigation/AppFooter.vue';
+import AppHeader from '@/components/navigation/AppHeader.vue';
+import AppSidebar from '@/components/navigation/AppSidebar.vue';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar/index.js';
+import { useRoute } from 'vue-router';
 
-const route = useRoute()
+const route = useRoute();
 </script>
 
 <!--
@@ -33,7 +33,7 @@ const route = useRoute()
   <SidebarProvider>
     <AppSidebar v-if="route.meta?.hasSidebar" />
     <main class="w-full" :class="{ 'with-sidebar': route.meta?.hasSidebar }">
-      <SidebarTrigger v-if="route.meta?.hasSidebar" class="absolute left-50 top-4 z-20"/>
+      <SidebarTrigger v-if="route.meta?.hasSidebar" class="absolute left-50 top-4 z-20" />
       <div class="flex flex-col min-h-screen w-full">
         <router-view v-slot="{ Component }">
           <template v-if="Component">
@@ -45,7 +45,6 @@ const route = useRoute()
           </template>
         </router-view>
       </div>
-
     </main>
   </SidebarProvider>
 </template>
@@ -95,5 +94,4 @@ const route = useRoute()
 </template>
 -->
 
-<style scoped>
-</style>
+<style scoped></style>

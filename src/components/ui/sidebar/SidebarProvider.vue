@@ -41,16 +41,11 @@ function setOpenMobile(value) {
 
 // Helper to toggle the sidebar.
 function toggleSidebar() {
-  return isMobile.value
-    ? setOpenMobile(!openMobile.value)
-    : setOpen(!open.value);
+  return isMobile.value ? setOpenMobile(!openMobile.value) : setOpen(!open.value);
 }
 
 useEventListener('keydown', (event) => {
-  if (
-    event.key === SIDEBAR_KEYBOARD_SHORTCUT &&
-    (event.metaKey || event.ctrlKey)
-  ) {
+  if (event.key === SIDEBAR_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
     event.preventDefault();
     toggleSidebar();
   }

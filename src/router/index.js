@@ -1,12 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import CollectDataView from '@/views/CollectDataView.vue'
-import DashboardView from '@/views/DashboardView.vue'
-import ResultView from '@/views/ResultView.vue'
-import StatsView from '@/views/dashboard/StatsView.vue'
-import EvidenceView from '@/views/dashboard/EvidenceView.vue'
-import CertificationView from '@/views/dashboard/CertificationView.vue'
-import GeneralDashboardView from '@/views/dashboard/GeneralDashboardView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import CollectDataView from '@/views/CollectDataView.vue';
+import DashboardView from '@/views/DashboardView.vue';
+import ResultView from '@/views/ResultView.vue';
+import StatsView from '@/views/dashboard/StatsView.vue';
+import EvidenceView from '@/views/dashboard/EvidenceView.vue';
+import CertificationView from '@/views/dashboard/CertificationView.vue';
+import GeneralDashboardView from '@/views/dashboard/GeneralDashboardView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,7 +18,7 @@ const router = createRouter({
       meta: {
         label: 'Startseite',
         hasSidebar: true,
-      }
+      },
     },
     {
       path: '/collect',
@@ -27,7 +27,7 @@ const router = createRouter({
       meta: {
         label: 'Datenerfassung',
         hasSidebar: true,
-      }
+      },
     },
     {
       path: '/dashboard',
@@ -78,7 +78,7 @@ const router = createRouter({
       meta: {
         label: 'Ergebnisse',
         hasSidebar: true,
-      }
+      },
     },
     {
       path: '/about',
@@ -90,9 +90,9 @@ const router = createRouter({
       meta: {
         label: 'About',
         hasSidebar: false,
-      }
+      },
     },
   ],
-})
+});
 
-export default router
+export default router;

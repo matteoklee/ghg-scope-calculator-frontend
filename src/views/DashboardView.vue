@@ -1,13 +1,11 @@
 <script>
 export default {
-  name: 'DashboardView'
-}
+  name: 'DashboardView',
+};
 </script>
 
 <template>
   <router-view></router-view>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

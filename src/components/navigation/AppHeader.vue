@@ -86,7 +86,7 @@ export default {
       </div>
 
       <div class="flex items-center lg:order-2">
-        <Button @click="toggleTheme()"  variant="ghost" size="icon" class="mr-2">
+        <Button @click="toggleTheme()" variant="ghost" size="icon" class="mr-2">
           <Sun v-if="!isDarkMode" class="h-5 w-5" />
           <Moon v-else class="h-5 w-5" />
         </Button>
