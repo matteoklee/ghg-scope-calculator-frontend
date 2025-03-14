@@ -1,34 +1,47 @@
 <script>
-import { Button } from '@/components/ui/button/index.js'
-import { User, Settings, LogOut } from 'lucide-vue-next'
+import { Button } from '@/components/ui/button/index.js';
+import { User, Settings, LogOut, Moon, Sun } from 'lucide-vue-next';
 import {
   DropdownMenu,
-  DropdownMenuContent, DropdownMenuItem,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu/index.js'
-import { useRoute } from 'vue-router'
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu/index.js';
+import { useRoute } from 'vue-router';
 
 export default {
-name: "AppHeader",
-  components: { DropdownMenuItem, DropdownMenuContent, DropdownMenuTrigger, DropdownMenu, Button, User, Settings, LogOut },
+  name: 'AppHeader',
+  components: {
+    DropdownMenuItem,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+    DropdownMenu,
+    Button,
+    User,
+    Settings,
+    LogOut,
+    Moon,
+    Sun,
+  },
   setup() {
-    const route = useRoute()
+    const route = useRoute();
     return {
-      route
-    }
+      route,
+    };
   },
   data() {
     return {
+      isDarkMode: false,
       isAuthenticated: true,
-      userName: "admin",
+      userName: 'admin',
       links: [
         { name: 'Startseite', path: '/' },
         { name: 'Datenerfassung', path: '/collect' },
         { name: 'Ergebnisse', path: '/results' },
         { name: 'Dashboard', path: '/dashboard' },
         { name: 'About', path: '/about' },
-      ]
-    }
+      ],
+    };
   },
   methods: {
     logout() {
@@ -41,22 +54,43 @@ name: "AppHeader",
     },
     isActive(path) {
       return this.route.path === path || (path !== '/' && this.route.path.startsWith(path));
-    }
-
+    },
+    toggleTheme() {
+      this.isDarkMode = !this.isDarkMode;
+      localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+      this.applyTheme();
+    },
+    applyTheme() {
+      if (this.isDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    },
   },
-  computed: {
-  }
-}
+  mounted() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.isDarkMode = true;
+    }
+    this.applyTheme();
+  },
+};
 </script>
 
 <template>
-  <nav class="bg-white border-b border-gray-200 px-4 w-full z-10">
+  <nav class="border-b border-gray-200 px-4 w-full z-10">
     <div class="flex flex-wrap justify-between items-center ml-6">
       <div class="flex items-center">
         <span class="self-center text-xl font-semibold whitespace-nowrap"></span>
       </div>
 
       <div class="flex items-center lg:order-2">
+        <Button @click="toggleTheme()"  variant="ghost" size="icon" class="mr-2">
+          <Sun v-if="!isDarkMode" class="h-5 w-5" />
+          <Moon v-else class="h-5 w-5" />
+        </Button>
+
         <Button variant="ghost" size="icon" class="mr-2">
           <Settings class="h-5 w-5" />
         </Button>
@@ -86,10 +120,10 @@ name: "AppHeader",
           <li v-for="link in links" :key="link.name">
             <RouterLink
               :to="link.path"
-              class="block px-2 text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out relative py-3"
+              class="block px-2 hover:bg-gray-100 transition duration-300 ease-in-out relative py-3"
               :class="{
-                'font-medium border-b-4 border-green-500': isActive(link.path),
-                'border-b-2 border-transparent': !isActive(link.path)
+                'font-medium border-b-4 border-primary text-primary': isActive(link.path),
+                'border-b-2 border-transparent text-gray-900': !isActive(link.path),
               }"
             >
               {{ link.name }}
@@ -101,6 +135,4 @@ name: "AppHeader",
   </nav>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

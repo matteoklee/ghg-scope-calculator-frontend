@@ -8,10 +8,10 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <div class="flex flex-col m-4">
+  <div class="py-4">
+    <div class="flex flex-col">
       <div class="flex justify-end">
-        <Button variant="outline" size="lg">
+        <Button variant="" size="lg" class="text-md bg-white text-primary border-primary border hover:text-white">
           Zurück
         </Button>
       </div>
