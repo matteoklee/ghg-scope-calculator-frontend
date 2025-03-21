@@ -116,11 +116,11 @@ export default {
       </div>
 
       <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
-        <ul class="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0">
+        <ul class="flex flex-col mt-4 lg:flex-row lg:space-x-4 lg:mt-0">
           <li v-for="link in links" :key="link.name">
             <RouterLink
               :to="link.path"
-              class="block px-2 hover:bg-gray-100 transition duration-300 ease-in-out relative py-3"
+              class="block px-2 hover:text-primary transition-all duration-300 ease-in-out relative py-3"
               :class="{
                 'font-medium border-b-4 border-primary text-primary': isActive(link.path),
                 'border-b-2 border-transparent text-gray-900': !isActive(link.path),

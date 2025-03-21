@@ -33,7 +33,7 @@ const route = useRoute();
   <SidebarProvider>
     <AppSidebar v-if="route.meta?.hasSidebar" />
     <main class="w-full" :class="{ 'with-sidebar': route.meta?.hasSidebar }">
-      <SidebarTrigger v-if="route.meta?.hasSidebar" class="absolute left-50 top-4 z-20" />
+      <SidebarTrigger v-if="route.meta?.hasSidebar" class="absolute left-50 top-2.5 z-20" />
       <div class="flex flex-col min-h-screen w-full">
         <router-view v-slot="{ Component }">
           <template v-if="Component">

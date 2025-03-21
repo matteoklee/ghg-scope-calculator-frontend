@@ -15,6 +15,12 @@ import {
   ShieldCheck,
   Info,
   Calculator,
+  Flame,
+  Car,
+  Wind,
+  Zap,
+  ThermometerSnowflake,
+  ThermometerSun
 } from 'lucide-vue-next';
 import {
   Sidebar,
@@ -67,6 +73,12 @@ export default {
     ShieldCheck,
     Info,
     Calculator,
+    Flame,
+    Car,
+    Wind,
+    Zap,
+    ThermometerSnowflake,
+    ThermometerSun,
     SidebarMenuSubItem,
     SidebarMenuSub,
   },
@@ -110,13 +122,23 @@ export default {
             {
               title: 'Stationäre Anlagen (z.B. Heizungsanlagen)',
               path: '/collect/scope-1/stationary-equipment',
+              icon: Flame,
             },
             {
               title: 'Mobile Anlagen (z.B. Firmenfahrzeuge)',
               path: '/collect/scope-1/mobile-equipment',
+              icon: Car,
             },
-            { title: 'Prozessemissionen', path: '/collect/scope-1/process-emissions' },
-            { title: 'Flüchtige Emissionen', path: '/collect/scope-1/fugitive-emissions' },
+            {
+              title: 'Prozessemissionen',
+              path: '/collect/scope-1/process-emissions',
+              icon: Factory,
+            },
+            {
+              title: 'Flüchtige Emissionen',
+              path: '/collect/scope-1/fugitive-emissions',
+              icon: Wind,
+            },
           ],
         },
         {
@@ -125,10 +147,26 @@ export default {
           icon: Plug,
           path: '/collect/scope-2',
           items: [
-            { title: 'Strom', path: '/collect/scope-2/electricity' },
-            { title: 'Dampf', path: '/collect/scope-2/steam' },
-            { title: 'Heizung (Fernwärme)', path: '/collect/scope-2/heating' },
-            { title: 'Kühlung', path: '/collect/scope-2/cooling' },
+            {
+              title: 'Strom',
+              path: '/collect/scope-2/electricity',
+              icon: Zap,
+            },
+            {
+              title: 'Dampf',
+              path: '/collect/scope-2/steam',
+              icon: ThermometerSun,
+            },
+            {
+              title: 'Heizung (Fernwärme)',
+              path: '/collect/scope-2/heating',
+              icon: ThermometerSun,
+            },
+            {
+              title: 'Kühlung',
+              path: '/collect/scope-2/cooling',
+              icon: ThermometerSnowflake,
+            },
           ],
         },
         {
@@ -203,20 +241,23 @@ export default {
 <template>
   <Sidebar>
     <SidebarContent>
-      <div class="inline-flex items-center mt-2 mb-1 mx-2">
+      <div class="inline-flex items-center justify-center mt-2 mb-1 mx-2">
         <Calculator class="mr-2 h-6 w-6" />
-        <SidebarGroupLabel class="text-xl text-black font-semibold">
+        <SidebarGroupLabel class="text-xl text-primary font-semibold">
           CO2e Rechner
         </SidebarGroupLabel>
       </div>
       <SidebarSeparator class="" />
-      <SidebarGroupLabel class="text-lg font-medium text-black uppercase">
+      <SidebarGroupLabel class="text-lg font-medium text-black uppercase justify-center">
         {{ route.meta?.label }}
       </SidebarGroupLabel>
-      <SidebarGroup v-for="(scope, index) in navItems" :key="index">
+      <SidebarSeparator class="mb-2" />
+      <SidebarGroup v-for="(scope, index) in navItems" :key="index" class="">
+        <!--
         <SidebarGroupLabel class="px-3 py-2 text-sm font-medium text-gray-500">
           {{ scope.label }}
         </SidebarGroupLabel>
+        -->
         <SidebarGroupContent>
           <SidebarMenu>
             <div v-if="!scope.items">
@@ -230,11 +271,11 @@ export default {
               </SidebarMenuItem>
             </div>
             <div v-else>
-              <Collapsible :open="openStates[index]" @update:open="toggleOpen(index)" class="my-2">
+              <Collapsible :open="openStates[index]" @update:open="toggleOpen(index)" class="">
                 <SidebarMenuItem>
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton
-                      class="w-full justify-start px-3 py-2 hover:bg-gray-100 border:bg-primary border"
+                      class="w-full justify-start px-3 py-5 hover:bg-gray-100"
                     >
                       <ChevronDown v-if="openStates[index]" class="h-4 w-4 flex-shrink-0" />
                       <ChevronRight v-else class="h-4 w-4 flex-shrink-0" />
@@ -249,12 +290,20 @@ export default {
                   <CollapsibleContent>
                     <SidebarMenuSub>
                       <SidebarMenuSubItem v-for="(item, itemIndex) in scope.items" :key="itemIndex">
-                        <router-link
-                          :to="item.path"
-                          class="block w-full px-2 py-1 my-1 rounded-lg truncate text-sm text-black"
+                        <div class="flex items-center p-2 rounded-md transition-all duration-300"
+                             :class="{
+                                'text-green-700 bg-green-100 font-bold': route.path === item.path,
+                                'hover:bg-green-100 text-black': route.path !== item.path
+                             }"
                         >
-                          {{ item.title }}
-                        </router-link>
+                          <component class="mr-2 h-4 w-4 flex-shrink-0" :is="item.icon" />
+                          <router-link
+                            :to="item.path"
+                            class="block w-full truncate text-sm">
+                            {{ item.title }}
+                          </router-link>
+                        </div>
+
                       </SidebarMenuSubItem>
                     </SidebarMenuSub>
                   </CollapsibleContent>

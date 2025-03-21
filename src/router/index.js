@@ -7,6 +7,7 @@ import StatsView from '@/views/dashboard/StatsView.vue';
 import EvidenceView from '@/views/dashboard/EvidenceView.vue';
 import CertificationView from '@/views/dashboard/CertificationView.vue';
 import GeneralDashboardView from '@/views/dashboard/GeneralDashboardView.vue';
+import NotFound from '@/views/NotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +20,15 @@ const router = createRouter({
         label: 'Startseite',
         hasSidebar: true,
       },
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
+      component: NotFound,
+      meta: {
+        label: 'Not Found',
+        hasSidebar: true
+      }
     },
     {
       path: '/collect',
