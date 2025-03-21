@@ -38,8 +38,8 @@ const route = useRoute();
         <router-view v-slot="{ Component }">
           <template v-if="Component">
             <AppHeader />
-            <div class="flex-grow w-full p-4">
-              <Component class="w-full" :is="Component" />
+            <div class="flex-grow w-full">
+              <Component class="" :is="Component" />
             </div>
             <AppFooter class="" />
           </template>
