@@ -20,7 +20,8 @@ import {
   Wind,
   Zap,
   ThermometerSnowflake,
-  ThermometerSun
+  ThermometerSun,
+  Grip
 } from 'lucide-vue-next';
 import {
   Sidebar,
@@ -79,6 +80,7 @@ export default {
     Zap,
     ThermometerSnowflake,
     ThermometerSun,
+    Grip,
     SidebarMenuSubItem,
     SidebarMenuSub,
   },
@@ -248,9 +250,20 @@ export default {
         </SidebarGroupLabel>
       </div>
       <SidebarSeparator class="" />
+
+
+      <SidebarGroupLabel class="text-md font-medium text-black mx-2">
+        <router-link to="/" class="inline-flex items-center">
+          <Grip class="mr-4 h-5 w-5" />
+          <span>Überblick</span>
+        </router-link>
+      </SidebarGroupLabel>
+      <!--
       <SidebarGroupLabel class="text-lg font-medium text-black uppercase justify-center">
         {{ route.meta?.label }}
       </SidebarGroupLabel>
+      -->
+
       <SidebarSeparator class="mb-2" />
       <SidebarGroup v-for="(scope, index) in navItems" :key="index" class="">
         <!--
