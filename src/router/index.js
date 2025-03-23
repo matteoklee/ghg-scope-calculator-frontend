@@ -15,6 +15,7 @@ import ScopeView from '@/views/collect/ScopeView.vue'
 import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue'
 import StationaryEquipment from '@/components/collect/scope1/StationaryEquipment.vue'
 import Scope1 from '@/components/collect/scope1/Scope1.vue'
+import Scope2 from '@/components/collect/scope2/Scope2.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -92,7 +93,7 @@ const router = createRouter({
         {
           path: 'scopes',
           name: 'scopes',
-          component: ScopeView,
+          component: Scope2,
           meta: {
             label: 'Scopes',
             hasSidebar: true,

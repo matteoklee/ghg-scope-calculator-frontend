@@ -6,14 +6,14 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card/index.js'
-import { Label } from 'reka-ui'
 import { Input } from '@/components/ui/input/index.js'
 import { Button } from '@/components/ui/button/index.js'
 import { ArrowRight, Lock, User } from 'lucide-vue-next'
+import { Label } from '@/components/ui/label/index.js'
 
 export default {
   name: 'LoginView',
-  components: { Button, Input, Label, CardContent, CardDescription, CardTitle, CardHeader, Card, ArrowRight, Lock, User }
+  components: { Label, Button, Input, CardContent, CardDescription, CardTitle, CardHeader, Card, ArrowRight, Lock, User }
 }
 </script>
 
