@@ -1,13 +1,9 @@
 <script>
 export default {
-  name: 'RegisterView'
-}
+  name: 'RegisterView',
+};
 </script>
 
-<template>
+<template></template>
 
-</template>
-
-<style scoped>
-
-</style>
+<style scoped></style>

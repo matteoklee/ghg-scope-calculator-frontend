@@ -1,6 +1,6 @@
 <script>
-import { Button } from '@/components/ui/button/index.js'
-import { ArrowRight, Factory, Plug, Truck } from 'lucide-vue-next'
+import { Button } from '@/components/ui/button/index.js';
+import { ArrowRight, Factory, Plug, Truck } from 'lucide-vue-next';
 
 export default {
   name: 'OverView',
@@ -12,34 +12,37 @@ export default {
           title: 'Scope 1',
           icon: Factory,
           subTitle: 'Direkte Emissionen',
-          description: 'Direkte Emissionen aus eigenen oder kontrollierten Quellen, wie z.B. Verbrennung von Kraftstoffen in Unternehmensfahrzeugen oder -anlagen.',
-          path: '/collect/scope-1'
+          description:
+            'Direkte Emissionen aus eigenen oder kontrollierten Quellen, wie z.B. Verbrennung von Kraftstoffen in Unternehmensfahrzeugen oder -anlagen.',
+          path: '/collect/scope-1',
         },
         {
           title: 'Scope 2',
           icon: Plug,
           subTitle: 'Indirekte Emissionen aus Energiebezug',
-          description: 'Indirekte Emissionen aus der Erzeugung von gekauftem Strom, Dampf, Heizung und Kühlung, die vom Unternehmen verbraucht werden.',
-          path: '/collect/scopes'
+          description:
+            'Indirekte Emissionen aus der Erzeugung von gekauftem Strom, Dampf, Heizung und Kühlung, die vom Unternehmen verbraucht werden.',
+          path: '/collect/scopes',
         },
         {
           title: 'Scope 3',
           icon: Truck,
           subTitle: 'Sonstige indirekte Emissionen',
-          description: 'Alle indirekten Emissionen (nicht in Scope 2 enthalten), die in der Wertschöpfungskette des Unternehmens auftreten.',
-          path: '/collect/scopes'
-        }
+          description:
+            'Alle indirekten Emissionen (nicht in Scope 2 enthalten), die in der Wertschöpfungskette des Unternehmens auftreten.',
+          path: '/collect/scopes',
+        },
       ],
       instructions: [
-        "Geben Sie Ihre Verbrauchsdaten für Scope 1, 2 und 3 ein.",
-        "Laden Sie optional Nachweisdokumente für Ihre Daten hoch.",
-        "Berechnen Sie Ihre Emissionen.",
-        "Analysieren Sie die Ergebnisse im Dashboard.",
-        "Exportieren Sie Ihren Bericht oder validieren Sie Ihre Nachweise."
-      ]
-    }
-  }
-}
+        'Geben Sie Ihre Verbrauchsdaten für Scope 1, 2 und 3 ein.',
+        'Laden Sie optional Nachweisdokumente für Ihre Daten hoch.',
+        'Berechnen Sie Ihre Emissionen.',
+        'Analysieren Sie die Ergebnisse im Dashboard.',
+        'Exportieren Sie Ihren Bericht oder validieren Sie Ihre Nachweise.',
+      ],
+    };
+  },
+};
 </script>
 
 <template>
@@ -53,7 +56,6 @@ export default {
     </div>
     <div class="mt-8">
       <div class="grid xl:grid-cols-3 grid-cols-1 xl:gap-12 gap-4">
-
         <div v-for="(item, index) in scopeItems" :key="index" class="border rounded-md p-6 shadow">
           <div class="inline-flex items-center">
             <component :is="item.icon" class="mr-2 h-5 w-5" />
@@ -61,7 +63,7 @@ export default {
           </div>
           <div class="mt-2">
             <p class="text-sm text-gray-700 text-justify">
-             {{ item.subTitle }}
+              {{ item.subTitle }}
             </p>
           </div>
           <div class="mt-4">
@@ -78,7 +80,6 @@ export default {
             </router-link>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -96,10 +97,7 @@ export default {
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

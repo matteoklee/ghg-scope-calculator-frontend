@@ -24,7 +24,7 @@ import {
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger
+  CollapsibleTrigger,
 } from '@/components/ui/collapsible/index.js';
 import { useRoute } from 'vue-router';
 
@@ -212,8 +212,11 @@ export default {
           </button>
         </CollapsibleTrigger>
         <CollapsibleContent>
-          <div v-for="(item, itemIndex) in scope.items" :key="itemIndex"
-               class="flex flex-row justify-between items-center w-full shadow-md px-8 py-4 rounded-md text-black border my-2.5">
+          <div
+            v-for="(item, itemIndex) in scope.items"
+            :key="itemIndex"
+            class="flex flex-row justify-between items-center w-full shadow-md px-8 py-4 rounded-md text-black border my-2.5"
+          >
             <div class="flex items-center">
               <component class="mr-2 h-5 w-5 flex-shrink-0" :is="item.icon" />
               <span class="block w-full truncate text-sm">

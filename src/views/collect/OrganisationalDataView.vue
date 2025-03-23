@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'OrganisationalDataView'
-}
+  name: 'OrganisationalDataView',
+};
 </script>
 
 <template>
@@ -13,12 +13,8 @@ export default {
         invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
       </p>
     </div>
-    <div class="mt-8">
-      Eingabeformular
-    </div>
+    <div class="mt-8">Eingabeformular</div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

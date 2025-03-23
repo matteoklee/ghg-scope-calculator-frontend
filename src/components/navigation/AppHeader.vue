@@ -23,7 +23,7 @@ export default {
     Moon,
     Sun,
     Calculator,
-    LogIn
+    LogIn,
   },
   setup() {
     const route = useRoute();

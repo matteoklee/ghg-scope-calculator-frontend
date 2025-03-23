@@ -31,7 +31,7 @@ export default {
     File,
     Upload,
     Check,
-    FileCheck
+    FileCheck,
   },
   data() {
     return {
@@ -86,7 +86,7 @@ export default {
           class="mb-6 w-full border-2 border-dashed rounded-lg p-6 text-center relative transition-all duration-300"
           :class="{
             'border-gray-300 bg-white': !isDragging,
-            'border-greensign-700 bg-green-50 scale-[1.01] shadow-md': isDragging
+            'border-greensign-700 bg-green-50 scale-[1.01] shadow-md': isDragging,
           }"
           @dragover.prevent="handleDragOver"
           @dragleave.prevent="handleDragLeave"
@@ -97,29 +97,43 @@ export default {
               <Upload class="w-12 h-12 text-gray-500"></Upload>
             </div>
             <p class="text-gray-500 mb-2 mt-8 font-medium">
-              {{ isDragging ? "📂 Drop the file now..." : "Dragn 'n' Drop file here, or click the following button to select file." }}
+              {{
+                isDragging
+                  ? '📂 Drop the file now...'
+                  : "Dragn 'n' Drop file here, or click the following button to select file."
+              }}
             </p>
             <p class="text-gray-400 mb-8">You can upload 1 file (up to 5 MB each)</p>
             <div>
               <Label for="evidence" class="hidden">Select File</Label>
-              <Input id="evidence" type="file" class="hover:border-gray-900" @change="handleFileSelect" />
+              <Input
+                id="evidence"
+                type="file"
+                class="hover:border-gray-900"
+                @change="handleFileSelect"
+              />
             </div>
           </div>
           <div v-else>
             <div class="flex justify-center items-center my-6">
               <FileCheck class="w-12 h-12 text-green-600"></FileCheck>
             </div>
-            <p class="text-xl mb-2 mt-8 font-semibold">
-              Upload successful!
-            </p>
+            <p class="text-xl mb-2 mt-8 font-semibold">Upload successful!</p>
             <p class="text-gray-700 mb-2">Your file has been uploaded.</p>
-            <p class="text-gray-700 mb-8">{{uploadedFile.name}}, {{(uploadedFile.size/1000).toFixed(0)}} kB, {{uploadedFile.type}}</p>
+            <p class="text-gray-700 mb-8">
+              {{ uploadedFile.name }}, {{ (uploadedFile.size / 1000).toFixed(0) }} kB,
+              {{ uploadedFile.type }}
+            </p>
             <div>
               <Label for="evidence" class="hidden">Select File</Label>
-              <Input id="evidence" type="file" class="hover:border-gray-900" @change="handleFileSelect" />
+              <Input
+                id="evidence"
+                type="file"
+                class="hover:border-gray-900"
+                @change="handleFileSelect"
+              />
             </div>
           </div>
-
         </div>
 
         <!--

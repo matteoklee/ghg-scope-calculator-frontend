@@ -1,13 +1,13 @@
 <script>
-import { Button } from '@/components/ui/button/index.js'
-import { ArrowLeft, CircleSmall, Info, Upload } from 'lucide-vue-next'
-import { Badge } from '@/components/ui/badge/index.js'
-import UploadFileDialog from '@/components/collect/scope1/UploadFileDialog.vue'
+import { Button } from '@/components/ui/button/index.js';
+import { ArrowLeft, CircleSmall, Info, Upload } from 'lucide-vue-next';
+import { Badge } from '@/components/ui/badge/index.js';
+import UploadFileDialog from '@/components/collect/scope1/UploadFileDialog.vue';
 
 export default {
   name: 'StationaryEquipment',
-  components: { UploadFileDialog, Badge, Button, ArrowLeft, CircleSmall, Info, Upload }
-}
+  components: { UploadFileDialog, Badge, Button, ArrowLeft, CircleSmall, Info, Upload },
+};
 </script>
 
 <template>
@@ -27,7 +27,8 @@ export default {
         </div>
       </div>
       <p class="text-lg text-gray-700 text-justify mb-4">
-        Emissionen aus der Verbrennung von Kraftstoffen in unternehmenseigenen oder kontrollierten Fahrzeugen.
+        Emissionen aus der Verbrennung von Kraftstoffen in unternehmenseigenen oder kontrollierten
+        Fahrzeugen.
       </p>
     </div>
     <div class="mt-12">
@@ -49,7 +50,10 @@ export default {
                 <Badge variant="outline">Recommended</Badge>
               </div>
               <div class="mb-4">
-                <p class="text-justify text-gray-700">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <p class="text-justify text-gray-700">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                </p>
               </div>
               <div class="flex justify-between items-center">
                 <Button variant="outline">
@@ -68,7 +72,9 @@ export default {
                 <Badge variant="outline">Recommended</Badge>
               </div>
               <div class="mb-4">
-                <p class="text-justify text-gray-700">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                <p class="text-justify text-gray-700">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.
+                </p>
               </div>
               <div class="flex justify-end items-center">
                 <Button size="lg" class="w-full" variant="">
@@ -78,16 +84,10 @@ export default {
               </div>
             </div>
           </div>
-
-
-
         </div>
-
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

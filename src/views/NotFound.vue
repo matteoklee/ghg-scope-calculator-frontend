@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'NotFound'
+  name: 'NotFound',
 };
 </script>
 
@@ -15,6 +15,4 @@ export default {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

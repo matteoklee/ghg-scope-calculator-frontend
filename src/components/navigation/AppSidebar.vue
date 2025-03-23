@@ -22,21 +22,23 @@ import {
   ThermometerSnowflake,
   ThermometerSun,
   Grip,
-  Copyright
+  Copyright,
 } from 'lucide-vue-next';
 import {
   Sidebar,
-  SidebarContent, SidebarFooter,
+  SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel, SidebarHeader,
+  SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubItem,
-  SidebarSeparator
-} from '@/components/ui/sidebar/index.js'
+  SidebarSeparator,
+} from '@/components/ui/sidebar/index.js';
 import {
   Collapsible,
   CollapsibleContent,
@@ -104,7 +106,12 @@ export default {
       ],
       resultItems: [
         { label: 'Neue Berechnung', title: 'Neue Berechnung', icon: SquarePen, path: '/collect' },
-        { label: 'Berechnungsverlauf', title: 'Berechnungsverlauf', icon: ChartBar, path: '/results/history' },
+        {
+          label: 'Berechnungsverlauf',
+          title: 'Berechnungsverlauf',
+          icon: ChartBar,
+          path: '/results/history',
+        },
         { label: 'Nachweise', title: 'Nachweise', icon: Files, path: '/results/evidence' },
       ],
       dashboardItems: [
@@ -252,7 +259,8 @@ export default {
 </script>
 
 <template>
-  <Sidebar variant="floating" side="left" collapsible="icon"> <!-- offcanvas -->
+  <Sidebar variant="floating" side="left" collapsible="icon">
+    <!-- offcanvas -->
 
     <SidebarHeader>
       <SidebarMenu>
@@ -261,9 +269,7 @@ export default {
             <router-link to="/" class="flex items-center">
               <Calculator class="mr-2 h-6 w-6 flex-shrink-0" />
               <div class="flex flex-col items-start justify-start text-left truncate">
-                <p class="text-xl text-primary font-semibold">
-                  CO2e Rechner
-                </p>
+                <p class="text-xl text-primary font-semibold">CO2e Rechner</p>
                 <p>nach GHG Protokoll</p>
               </div>
             </router-link>
@@ -282,7 +288,6 @@ export default {
         </router-link>
       </SidebarGroupLabel>
       -->
-
 
       <SidebarGroup>
         <SidebarGroupContent>
@@ -328,9 +333,7 @@ export default {
               <Collapsible :open="openStates[index]" @update:open="toggleOpen(index)" class="">
                 <SidebarMenuItem>
                   <CollapsibleTrigger asChild>
-                    <SidebarMenuButton
-                      class="w-full justify-start px-3 py-5 hover:bg-gray-100"
-                    >
+                    <SidebarMenuButton class="w-full justify-start px-3 py-5 hover:bg-gray-100">
                       <ChevronDown v-if="openStates[index]" class="h-4 w-4 flex-shrink-0" />
                       <ChevronRight v-else class="h-4 w-4 flex-shrink-0" />
                       <div class="flex items-center">
@@ -344,20 +347,18 @@ export default {
                   <CollapsibleContent>
                     <SidebarMenuSub>
                       <SidebarMenuSubItem v-for="(item, itemIndex) in scope.items" :key="itemIndex">
-                        <div class="flex items-center p-2 rounded-md transition-all duration-100"
-                             :class="{
-                                'text-green-700 bg-green-100 font-bold': route.path === item.path,
-                                'hover:bg-green-100 text-black': route.path !== item.path
-                             }"
+                        <div
+                          class="flex items-center p-2 rounded-md transition-all duration-100"
+                          :class="{
+                            'text-green-700 bg-green-100 font-bold': route.path === item.path,
+                            'hover:bg-green-100 text-black': route.path !== item.path,
+                          }"
                         >
                           <component class="mr-2 h-4 w-4 flex-shrink-0" :is="item.icon" />
-                          <router-link
-                            :to="item.path"
-                            class="block w-full truncate text-sm">
+                          <router-link :to="item.path" class="block w-full truncate text-sm">
                             {{ item.title }}
                           </router-link>
                         </div>
-
                       </SidebarMenuSubItem>
                     </SidebarMenuSub>
                   </CollapsibleContent>
@@ -383,7 +384,6 @@ export default {
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarFooter>
-
   </Sidebar>
 </template>
 

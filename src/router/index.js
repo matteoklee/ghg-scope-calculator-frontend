@@ -8,14 +8,14 @@ import EvidenceView from '@/views/dashboard/EvidenceView.vue';
 import CertificationView from '@/views/dashboard/CertificationView.vue';
 import GeneralDashboardView from '@/views/dashboard/GeneralDashboardView.vue';
 import NotFound from '@/views/NotFound.vue';
-import LoginView from '@/views/auth/LoginView.vue'
-import RegisterView from '@/views/auth/RegisterView.vue'
-import OverView from '@/views/collect/OverView.vue'
-import ScopeView from '@/views/collect/ScopeView.vue'
-import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue'
-import StationaryEquipment from '@/components/collect/scope1/StationaryEquipment.vue'
-import Scope1 from '@/components/collect/scope1/Scope1.vue'
-import Scope2 from '@/components/collect/scope2/Scope2.vue'
+import LoginView from '@/views/auth/LoginView.vue';
+import RegisterView from '@/views/auth/RegisterView.vue';
+import OverView from '@/views/collect/OverView.vue';
+import ScopeView from '@/views/collect/ScopeView.vue';
+import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue';
+import StationaryEquipment from '@/components/collect/scope1/StationaryEquipment.vue';
+import Scope1 from '@/components/collect/scope1/Scope1.vue';
+import Scope2 from '@/components/collect/scope2/Scope2.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,7 +62,7 @@ const router = createRouter({
         hasSidebar: true,
         hasHeader: true,
         hasFooter: true,
-      }
+      },
     },
     {
       path: '/collect',
@@ -127,9 +127,9 @@ const router = createRouter({
                 hasFooter: true,
               },
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
     {
       path: '/dashboard',
