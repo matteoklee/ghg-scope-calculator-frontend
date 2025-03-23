@@ -21,21 +21,22 @@ import {
   Zap,
   ThermometerSnowflake,
   ThermometerSun,
-  Grip
+  Grip,
+  Copyright
 } from 'lucide-vue-next';
 import {
   Sidebar,
-  SidebarContent,
+  SidebarContent, SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
+  SidebarGroupLabel, SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubItem,
-  SidebarSeparator,
-} from '@/components/ui/sidebar/index.js';
+  SidebarSeparator
+} from '@/components/ui/sidebar/index.js'
 import {
   Collapsible,
   CollapsibleContent,
@@ -47,6 +48,8 @@ import { useRoute } from 'vue-router';
 export default {
   name: 'AppSidebar',
   components: {
+    SidebarFooter,
+    SidebarHeader,
     SidebarSeparator,
     CollapsibleContent,
     CollapsibleTrigger,
@@ -81,6 +84,7 @@ export default {
     ThermometerSnowflake,
     ThermometerSun,
     Grip,
+    Copyright,
     SidebarMenuSubItem,
     SidebarMenuSub,
   },
@@ -97,6 +101,11 @@ export default {
         { label: 'Datenerfassung', title: 'Datenerfassung', icon: SquarePen, path: '/collect' },
         { label: 'Ergebnisse', title: 'Ergebnisse', icon: List, path: '/results' },
         { label: 'Dashboard', title: 'Dashboard', icon: ChartBar, path: '/dashboard' },
+      ],
+      resultItems: [
+        { label: 'Neue Berechnung', title: 'Neue Berechnung', icon: SquarePen, path: '/collect' },
+        { label: 'Berechnungsverlauf', title: 'Berechnungsverlauf', icon: ChartBar, path: '/results/history' },
+        { label: 'Nachweise', title: 'Nachweise', icon: Files, path: '/results/evidence' },
       ],
       dashboardItems: [
         { label: 'Statistiken', title: 'Statistiken', icon: ChartBar, path: '/dashboard/stats' },
@@ -232,6 +241,8 @@ export default {
         return this.scopeItems;
       } else if (this.route.path.startsWith('/dashboard')) {
         return this.dashboardItems;
+      } else if (this.route.path.startsWith('/results')) {
+        return this.resultItems;
       } else {
         return this.homeItems;
       }
@@ -241,34 +252,60 @@ export default {
 </script>
 
 <template>
-  <Sidebar>
+  <Sidebar variant="floating" side="left" collapsible="icon"> <!-- offcanvas -->
+
+    <SidebarHeader>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton class="py-8">
+            <router-link to="/" class="flex items-center">
+              <Calculator class="mr-2 h-6 w-6 flex-shrink-0" />
+              <div class="flex flex-col items-start justify-start text-left truncate">
+                <p class="text-xl text-primary font-semibold">
+                  CO2e Rechner
+                </p>
+                <p>nach GHG Protokoll</p>
+              </div>
+            </router-link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
+    </SidebarHeader>
+
+    <SidebarSeparator class="" />
     <SidebarContent>
-      <div class="inline-flex items-center justify-start mt-2 mb-1 ml-4">
-        <Calculator class="mr-2 h-6 w-6" />
-        <div class="flex flex-col items-start justify-start text-left">
-          <p class="text-xl text-primary font-semibold">
-            CO2e Rechner
-          </p>
-          <p>nach GHG Protokoll</p>
-        </div>
-
-      </div>
-      <SidebarSeparator class="" />
-
-
+      <!--
       <SidebarGroupLabel class="text-md font-medium text-black mx-2">
         <router-link to="/" class="inline-flex items-center">
           <Grip class="mr-4 h-5 w-5" />
           <span>Überblick</span>
         </router-link>
       </SidebarGroupLabel>
+      -->
+
+
+      <SidebarGroup>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <router-link to="/" class="flex items-center">
+                  <Grip class="mr-2 h-4 w-4 flex-shrink-0" />
+                  <span class="font-medium truncate text-sm text-black">Überblick</span>
+                </router-link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+
       <!--
       <SidebarGroupLabel class="text-lg font-medium text-black uppercase justify-center">
         {{ route.meta?.label }}
       </SidebarGroupLabel>
       -->
 
-      <SidebarSeparator class="mb-2" />
+      <SidebarSeparator class="" />
       <SidebarGroup v-for="(scope, index) in navItems" :key="index" class="">
         <!--
         <SidebarGroupLabel class="px-3 py-2 text-sm font-medium text-gray-500">
@@ -280,7 +317,7 @@ export default {
             <div v-if="!scope.items">
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <router-link :to="scope.path" class="flex items-center hover:bg-primary-300">
+                  <router-link :to="scope.path" class="flex items-center">
                     <component class="mr-2 h-4 w-4 flex-shrink-0" :is="scope.icon" />
                     <span class="truncate text-sm font-medium text-black">{{ scope.title }}</span>
                   </router-link>
@@ -333,12 +370,20 @@ export default {
       </SidebarGroup>
     </SidebarContent>
     <SidebarSeparator />
-    <SidebarFooter class="flex items-center justify-center p-4">
-      <div class="text-gray-500 inline-flex items-center">
-        <Info class="mr-2 h-4 w-4" />
-        <span class="text-sm">Über GHG Protocol</span>
-      </div>
+
+    <SidebarFooter>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton class="">
+            <router-link to="/" class="flex items-center">
+              <Copyright class="mr-2 h-4 w-4 flex-shrink-0" />
+              <span class="text-sm">K&S Software GbR</span>
+            </router-link>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
     </SidebarFooter>
+
   </Sidebar>
 </template>
 

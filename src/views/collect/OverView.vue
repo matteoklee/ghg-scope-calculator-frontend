@@ -12,23 +12,30 @@ export default {
           title: 'Scope 1',
           icon: Factory,
           subTitle: 'Direkte Emissionen',
-          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
-          path: '/collect/scopes'
+          description: 'Direkte Emissionen aus eigenen oder kontrollierten Quellen, wie z.B. Verbrennung von Kraftstoffen in Unternehmensfahrzeugen oder -anlagen.',
+          path: '/collect/scope-1'
         },
         {
           title: 'Scope 2',
           icon: Plug,
           subTitle: 'Indirekte Emissionen aus Energiebezug',
-          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          description: 'Indirekte Emissionen aus der Erzeugung von gekauftem Strom, Dampf, Heizung und Kühlung, die vom Unternehmen verbraucht werden.',
           path: '/collect/scopes'
         },
         {
           title: 'Scope 3',
           icon: Truck,
           subTitle: 'Sonstige indirekte Emissionen',
-          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          description: 'Alle indirekten Emissionen (nicht in Scope 2 enthalten), die in der Wertschöpfungskette des Unternehmens auftreten.',
           path: '/collect/scopes'
         }
+      ],
+      instructions: [
+        "Geben Sie Ihre Verbrauchsdaten für Scope 1, 2 und 3 ein.",
+        "Laden Sie optional Nachweisdokumente für Ihre Daten hoch.",
+        "Berechnen Sie Ihre Emissionen.",
+        "Analysieren Sie die Ergebnisse im Dashboard.",
+        "Exportieren Sie Ihren Bericht oder validieren Sie Ihre Nachweise."
       ]
     }
   }
@@ -72,6 +79,21 @@ export default {
           </div>
         </div>
 
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <div class="border rounded-md p-6 shadow">
+        <div>
+          <span class="text-2xl font-semibold">Vorgehensweise</span>
+        </div>
+        <div class="mt-4 ml-4 text-lg">
+          <ol class="list-decimal">
+            <li v-for="index in instructions" :key="index" class="pt-1">
+              {{ index }}
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
 

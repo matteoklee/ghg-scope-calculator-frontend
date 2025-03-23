@@ -13,6 +13,8 @@ import RegisterView from '@/views/auth/RegisterView.vue'
 import OverView from '@/views/collect/OverView.vue'
 import ScopeView from '@/views/collect/ScopeView.vue'
 import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue'
+import StationaryEquipment from '@/components/collect/scope1/StationaryEquipment.vue'
+import Scope1 from '@/components/collect/scope1/Scope1.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -97,6 +99,34 @@ const router = createRouter({
             hasHeader: true,
             hasFooter: true,
           },
+        },
+        {
+          path: 'scope-1',
+          component: ScopeView,
+          children: [
+            {
+              path: '',
+              name: 'scope1',
+              component: Scope1,
+              meta: {
+                label: 'Scope 1',
+                hasSidebar: true,
+                hasHeader: true,
+                hasFooter: true,
+              },
+            },
+            {
+              path: 'stationary-equipment',
+              name: 'stationary-equipment',
+              component: StationaryEquipment,
+              meta: {
+                label: 'stationary-equipment',
+                hasSidebar: true,
+                hasHeader: true,
+                hasFooter: true,
+              },
+            },
+          ]
         },
       ]
     },
