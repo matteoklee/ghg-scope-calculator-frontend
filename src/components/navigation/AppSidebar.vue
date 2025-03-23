@@ -113,7 +113,7 @@ export default {
           label: 'Organisatorische Daten',
           title: 'Organisatorische Daten',
           icon: Users,
-          path: '/collect/organization',
+          path: '/collect/orga',
         },
         {
           label: 'Scope 1: Direkte Emissionen',
@@ -243,11 +243,15 @@ export default {
 <template>
   <Sidebar>
     <SidebarContent>
-      <div class="inline-flex items-center justify-center mt-2 mb-1 mx-2">
+      <div class="inline-flex items-center justify-start mt-2 mb-1 ml-4">
         <Calculator class="mr-2 h-6 w-6" />
-        <SidebarGroupLabel class="text-xl text-primary font-semibold">
-          CO2e Rechner
-        </SidebarGroupLabel>
+        <div class="flex flex-col items-start justify-start text-left">
+          <p class="text-xl text-primary font-semibold">
+            CO2e Rechner
+          </p>
+          <p>nach GHG Protokoll</p>
+        </div>
+
       </div>
       <SidebarSeparator class="" />
 

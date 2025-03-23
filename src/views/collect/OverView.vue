@@ -1,10 +1,37 @@
 <script>
 import { Button } from '@/components/ui/button/index.js'
-import { ArrowRight, Factory } from 'lucide-vue-next'
+import { ArrowRight, Factory, Plug, Truck } from 'lucide-vue-next'
 
 export default {
   name: 'OverView',
-  components: { Button, ArrowRight, Factory }
+  components: { Button, ArrowRight, Factory, Plug, Truck },
+  data() {
+    return {
+      scopeItems: [
+        {
+          title: 'Scope 1',
+          icon: Factory,
+          subTitle: 'Direkte Emissionen',
+          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          path: '/collect/scopes'
+        },
+        {
+          title: 'Scope 2',
+          icon: Plug,
+          subTitle: 'Indirekte Emissionen aus Energiebezug',
+          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          path: '/collect/scopes'
+        },
+        {
+          title: 'Scope 3',
+          icon: Truck,
+          subTitle: 'Sonstige indirekte Emissionen',
+          description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+          path: '/collect/scopes'
+        }
+      ]
+    }
+  }
 }
 </script>
 
@@ -17,33 +44,34 @@ export default {
         invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
       </p>
     </div>
-    <div class="mt-4">
-      <div class="grid grid-cols-3 gap-6">
-        <div class="border rounded-md p-4">
+    <div class="mt-8">
+      <div class="grid xl:grid-cols-3 grid-cols-1 xl:gap-12 gap-4">
+
+        <div v-for="(item, index) in scopeItems" :key="index" class="border rounded-md p-6 shadow">
           <div class="inline-flex items-center">
-            <Factory class="mr-2 h-5 w-5" />
-            <span class="text-2xl font-bold">Scope 1</span>
+            <component :is="item.icon" class="mr-2 h-5 w-5" />
+            <span class="text-2xl font-semibold">{{ item.title }}</span>
           </div>
           <div class="mt-2">
             <p class="text-sm text-gray-700 text-justify">
-             Direkte Emissionen
+             {{ item.subTitle }}
             </p>
           </div>
           <div class="mt-4">
             <p class="text-sm text-gray-700 text-justify">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+              {{ item.description }}
             </p>
           </div>
-          <div class="mt-2">
-            <router-link to="/collect/scopes">
-              <Button class="inline-flex items-center">
-                <span>Scope 1 Daten eingeben</span>
+          <div class="mt-4">
+            <router-link :to="item.path">
+              <Button class="inline-flex items-center w-full">
+                <span>{{ item.title }} Daten eingeben</span>
                 <ArrowRight class="h-5 w-5 ml-2" />
               </Button>
             </router-link>
           </div>
         </div>
+
       </div>
     </div>
 

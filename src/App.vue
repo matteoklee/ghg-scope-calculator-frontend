@@ -37,11 +37,11 @@ const route = useRoute();
       <div class="flex flex-col min-h-screen w-full">
         <router-view v-slot="{ Component }">
           <template v-if="Component">
-            <AppHeader />
+            <AppHeader v-if="route.meta?.hasHeader" />
             <div class="flex-grow w-full">
               <Component class="" :is="Component" />
             </div>
-            <AppFooter class="" />
+            <AppFooter v-if="route.meta?.hasFooter" />
           </template>
         </router-view>
       </div>

@@ -12,6 +12,7 @@ import LoginView from '@/views/auth/LoginView.vue'
 import RegisterView from '@/views/auth/RegisterView.vue'
 import OverView from '@/views/collect/OverView.vue'
 import ScopeView from '@/views/collect/ScopeView.vue'
+import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,8 @@ const router = createRouter({
       meta: {
         label: 'Startseite',
         hasSidebar: true,
+        hasHeader: true,
+        hasFooter: true,
       },
     },
     {
@@ -32,6 +35,8 @@ const router = createRouter({
       meta: {
         label: 'Anmelden',
         hasSidebar: false,
+        hasHeader: false,
+        hasFooter: false,
       },
     },
     {
@@ -41,6 +46,8 @@ const router = createRouter({
       meta: {
         label: 'Registrieren',
         hasSidebar: false,
+        hasHeader: false,
+        hasFooter: false,
       },
     },
     {
@@ -49,7 +56,9 @@ const router = createRouter({
       component: NotFound,
       meta: {
         label: 'Not Found',
-        hasSidebar: true
+        hasSidebar: true,
+        hasHeader: true,
+        hasFooter: true,
       }
     },
     {
@@ -63,6 +72,19 @@ const router = createRouter({
           meta: {
             label: 'Überblick',
             hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
+          },
+        },
+        {
+          path: 'orga',
+          name: 'organization',
+          component: OrganisationalDataView,
+          meta: {
+            label: 'Organisation',
+            hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
           },
         },
         {
@@ -72,6 +94,8 @@ const router = createRouter({
           meta: {
             label: 'Scopes',
             hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
           },
         },
       ]
@@ -87,6 +111,8 @@ const router = createRouter({
           meta: {
             label: 'Dashboard',
             hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
           },
         },
         {
@@ -96,6 +122,8 @@ const router = createRouter({
           meta: {
             label: 'Statistiken',
             hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
           },
         },
         {
@@ -105,6 +133,8 @@ const router = createRouter({
           meta: {
             label: 'Nachweise',
             hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
           },
         },
         {
@@ -114,6 +144,8 @@ const router = createRouter({
           meta: {
             label: 'Zertifizierungen',
             hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
           },
         },
       ],
@@ -125,6 +157,8 @@ const router = createRouter({
       meta: {
         label: 'Ergebnisse',
         hasSidebar: true,
+        hasHeader: true,
+        hasFooter: true,
       },
     },
     {

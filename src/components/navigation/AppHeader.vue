@@ -1,6 +1,6 @@
 <script>
 import { Button } from '@/components/ui/button/index.js';
-import { User, Settings, LogOut, Moon, Sun } from 'lucide-vue-next';
+import { User, Settings, LogOut, Moon, Sun, Calculator } from 'lucide-vue-next';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,6 +22,7 @@ export default {
     LogOut,
     Moon,
     Sun,
+    Calculator
   },
   setup() {
     const route = useRoute();
@@ -104,13 +105,17 @@ export default {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" class="w-48">
             <DropdownMenuItem @click="logout" class="cursor-pointer">
+              <Calculator class="mr-2 h-4 w-4" />
+              <span>Meine Berechnungen</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem @click="logout" class="cursor-pointer">
               <LogOut class="mr-2 h-4 w-4" />
               <span>Logout</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <RouterLink v-else to="">
+        <RouterLink v-else to="/login">
           <Button @click="login">Login</Button>
         </RouterLink>
       </div>
