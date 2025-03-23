@@ -41,8 +41,8 @@ export default {
           <p class="text-2xl">Import and map your data</p>
         </div>
 
-        <div class="grid grid-cols-3 gap-8 mt-6">
-          <div class="ml-6 col-span-2">
+        <div class="grid xl:grid-cols-3 grid-cols-1 xl:gap-8 gap-y-4 mt-6">
+          <div class="xl:ml-6 col-span-2">
             <div class="border shadow p-8">
               <div class="inline-flex items-center mb-2">
                 <p class="font-semibold mr-4">Data mapping</p>
@@ -68,7 +68,7 @@ export default {
                 <Badge variant="outline">Recommended</Badge>
               </div>
               <div class="mb-4">
-                <p class="text-justify text-gray-700">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
+                <p class="text-justify text-gray-700">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
               </div>
               <div class="flex justify-end items-center">
                 <Button size="lg" class="w-full" variant="">
