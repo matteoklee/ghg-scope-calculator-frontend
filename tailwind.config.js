@@ -63,18 +63,40 @@ export default {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-        greensign: {
-          50: 'hsl(var(--greensign-50))',
-          100: 'hsl(var(--greensign-100))',
-          200: 'hsl(var(--greensign-200))',
-          300: 'hsl(var(--greensign-300))',
-          400: 'hsl(var(--greensign-400))',
-          500: 'hsl(var(--greensign-500))',
-          600: 'hsl(var(--greensign-600))',
-          700: 'hsl(var(--greensign-700))',
-          800: 'hsl(var(--greensign-800))',
-          900: 'hsl(var(--greensign-900))',
-        },
+  			greensign: {
+  				'50': 'hsl(var(--greensign-50))',
+  				'100': 'hsl(var(--greensign-100))',
+  				'200': 'hsl(var(--greensign-200))',
+  				'300': 'hsl(var(--greensign-300))',
+  				'400': 'hsl(var(--greensign-400))',
+  				'500': 'hsl(var(--greensign-500))',
+  				'600': 'hsl(var(--greensign-600))',
+  				'700': 'hsl(var(--greensign-700))',
+  				'800': 'hsl(var(--greensign-800))',
+  				'900': 'hsl(var(--greensign-900))'
+  			}
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--reka-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--reka-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },
