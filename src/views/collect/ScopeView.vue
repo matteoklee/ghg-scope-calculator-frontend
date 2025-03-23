@@ -29,7 +29,7 @@ import {
 import { useRoute } from 'vue-router';
 
 export default {
-  name: 'CollectDataView',
+  name: 'ScopeView',
   components: {
     CollapsibleContent,
     CollapsibleTrigger,
@@ -204,30 +204,30 @@ export default {
 
     <div class="w-full my-2" v-for="(scope, index) in scopeItems" :key="index">
       <Collapsible :open="openStates[index]" @update:open="toggleOpen(index)" class="">
-          <CollapsibleTrigger asChild>
-            <button class="w-full justify-start inline-flex items-center py-4">
-              <ChevronDown v-if="openStates[index]" class="h-5 w-5 flex-shrink-0 mr-2" />
-              <ChevronRight v-else class="h-5 w-5 flex-shrink-0 mr-2" />
-              <span class="text-md font-bold text-black">{{ scope.title }}</span>
-            </button>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-              <div v-for="(item, itemIndex) in scope.items" :key="itemIndex"
-                   class="flex flex-row justify-between items-center w-full shadow-md px-8 py-4 rounded-md text-black border my-2.5">
-                <div class="flex items-center">
-                  <component class="mr-2 h-5 w-5 flex-shrink-0" :is="item.icon" />
-                  <router-link :to="item.path" class="block w-full truncate text-sm">
-                    {{ item.title }}
-                  </router-link>
-                </div>
-                <div>
-                  <router-link to="/" class="inline-flex items-center">
-                    <span class="font-bold">Open Data</span>
-                    <ChevronRight class="ml-2 w-5 h-5" />
-                  </router-link>
-                </div>
-              </div>
-          </CollapsibleContent>
+        <CollapsibleTrigger asChild>
+          <button class="w-full justify-start inline-flex items-center py-4">
+            <ChevronDown v-if="openStates[index]" class="h-5 w-5 flex-shrink-0 mr-2" />
+            <ChevronRight v-else class="h-5 w-5 flex-shrink-0 mr-2" />
+            <span class="text-md font-bold text-black">{{ scope.title }}</span>
+          </button>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <div v-for="(item, itemIndex) in scope.items" :key="itemIndex"
+               class="flex flex-row justify-between items-center w-full shadow-md px-8 py-4 rounded-md text-black border my-2.5">
+            <div class="flex items-center">
+              <component class="mr-2 h-5 w-5 flex-shrink-0" :is="item.icon" />
+              <router-link :to="item.path" class="block w-full truncate text-sm">
+                {{ item.title }}
+              </router-link>
+            </div>
+            <div>
+              <router-link to="/" class="inline-flex items-center">
+                <span class="font-bold">Open Data</span>
+                <ChevronRight class="ml-2 w-5 h-5" />
+              </router-link>
+            </div>
+          </div>
+        </CollapsibleContent>
       </Collapsible>
     </div>
   </div>

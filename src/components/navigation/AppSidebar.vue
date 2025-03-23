@@ -303,7 +303,7 @@ export default {
                   <CollapsibleContent>
                     <SidebarMenuSub>
                       <SidebarMenuSubItem v-for="(item, itemIndex) in scope.items" :key="itemIndex">
-                        <div class="flex items-center p-2 rounded-md transition-all duration-300"
+                        <div class="flex items-center p-2 rounded-md transition-all duration-100"
                              :class="{
                                 'text-green-700 bg-green-100 font-bold': route.path === item.path,
                                 'hover:bg-green-100 text-black': route.path !== item.path

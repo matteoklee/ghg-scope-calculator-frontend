@@ -62,7 +62,19 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+        greensign: {
+          50: 'hsl(var(--greensign-50))',
+          100: 'hsl(var(--greensign-100))',
+          200: 'hsl(var(--greensign-200))',
+          300: 'hsl(var(--greensign-300))',
+          400: 'hsl(var(--greensign-400))',
+          500: 'hsl(var(--greensign-500))',
+          600: 'hsl(var(--greensign-600))',
+          700: 'hsl(var(--greensign-700))',
+          800: 'hsl(var(--greensign-800))',
+          900: 'hsl(var(--greensign-900))',
+        },
   		}
   	}
   },
