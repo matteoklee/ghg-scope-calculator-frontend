@@ -1,10 +1,10 @@
 <script>
 import { Download } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button/index.js'
-import CalculationHistoryDataTable from '@/components/result/CalculationHistoryDataTable.vue'
+import CalculationHistoryTable from '@/components/result/CalculationHistoryTable.vue'
 export default {
   name: 'HistoryView',
-  components: { CalculationHistoryDataTable, Button, Download }
+  components: { CalculationHistoryTable, Button, Download }
 }
 </script>
 
@@ -28,7 +28,7 @@ export default {
         </p>
       </div>
       <div class="mt-8">
-        <CalculationHistoryDataTable></CalculationHistoryDataTable>
+        <CalculationHistoryTable></CalculationHistoryTable>
       </div>
     </div>
   </div>

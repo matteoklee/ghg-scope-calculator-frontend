@@ -7,9 +7,6 @@
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
 
@@ -31,9 +28,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border:240 5.9% 90%;
+    --input:240 5.9% 90%;
+    --ring:240 5.9% 10%;
     --radius: 0.5rem;
 
     --chart-1: 12 76% 61%;
@@ -118,13 +115,5 @@
     --greensign-700: 164 93% 30%; /* #046C4E */
     --greensign-800: 166 94% 23%; /* #03543F */
     --greensign-900: 168 95% 14%; /* #014737 */
-  }
-}
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
