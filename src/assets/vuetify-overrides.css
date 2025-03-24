@@ -7,6 +7,19 @@
 }
 */
 
-::v-deep(.v-data-table tbody tr:hover) {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+.v-ripple__container {
+  display:none !important;
+}
+
+/* Entfernt Hover-Effekt über Checkbox-Container */
+.v-data-table .v-data-table__checkbox:hover,
+.v-data-table .v-data-table__expand-icon:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Optional: Cursor auf default setzen */
+.v-data-table .v-data-table__checkbox,
+.v-data-table .v-data-table__expand-icon {
+  cursor: pointer; /* oder default, je nach Wunsch */
 }

@@ -7,6 +7,17 @@ import '@mdi/font/css/materialdesignicons.css'
 const vuetify = createVuetify({
   components,
   directives,
+  defaults: {
+    global: {
+      ripple: false,
+    },
+    VCheckbox: {
+      ripple: false,
+    },
+    VIcon: {
+      ripple: false,
+    },
+  },
   theme: {
     defaultTheme: 'customTheme',
     themes: {

@@ -1,11 +1,37 @@
+import './assets/main.css';
+
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 
+/*
+import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/lib/components/VDataTable/VDataTable.css'
+import 'vuetify/lib/components/VTable/VTable.css'
+import 'vuetify/lib/components/VBtn/VBtn.css'
+import 'vuetify/lib/components/VRating/VRating.css'
+import 'vuetify/lib/components/VSheet/VSheet.css'
+import { VDataTable } from 'vuetify/components'
+import { VBtn } from 'vuetify/components'
+import { VRating } from 'vuetify/components'
+import { VTable } from 'vuetify/components'
+import { VSheet } from 'vuetify/components'
+
+const vuetify = createVuetify({
+  components: {
+    VDataTable,
+    VBtn,
+    VRating,
+    VTable,
+    VSheet
+  },
+})
+ */
+
 import App from './App.vue';
 import router from './router';
-import vuetify from '@/plugins/vuetify.js'
 
-import './assets/main.css';
+import vuetify from '@/plugins/vuetify.js'
 import './assets/vuetify-overrides.css';
 
 const app = createApp(App);

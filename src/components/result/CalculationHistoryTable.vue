@@ -93,6 +93,7 @@ export default {
       item-value="title"
       show-expand
       show-select
+      :ripple="false"
     ></v-data-table>
   </div>
 
@@ -159,5 +160,12 @@ export default {
 </template>
 
 <style scoped>
-
+.v-data-table .v-data-table__checkbox:hover,
+.v-data-table .v-data-table__expand-icon:hover {
+  background-color: transparent !important;
+}
+::v-deep(.v-data-table .v-data-table__checkbox:hover),
+::v-deep(.v-data-table .v-data-table__expand-icon:hover) {
+  background-color: transparent !important;
+}
 </style>
