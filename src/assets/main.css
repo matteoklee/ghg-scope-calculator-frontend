@@ -117,3 +117,11 @@
     --greensign-900: 168 95% 14%; /* #014737 */
   }
 }
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
