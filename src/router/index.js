@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import CollectDataView from '@/views/collect/CollectDataView.vue';
 import DashboardView from '@/views/dashboard/DashboardView.vue';
-import ResultView from '@/views/ResultView.vue';
+import ResultView from '@/views/result/ResultView.vue';
 import StatsView from '@/views/dashboard/StatsView.vue';
 import EvidenceView from '@/views/dashboard/EvidenceView.vue';
 import CertificationView from '@/views/dashboard/CertificationView.vue';
@@ -16,6 +16,9 @@ import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue';
 import StationaryEquipment from '@/components/collect/scope1/StationaryEquipment.vue';
 import Scope1 from '@/components/collect/scope1/Scope1.vue';
 import Scope2 from '@/components/collect/scope2/Scope2.vue';
+import HistoryView from '@/views/result/HistoryView.vue'
+import ResultStatsView from '@/views/result/ResultStatsView.vue'
+import UserEvidenceView from '@/views/result/UserEvidenceView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -183,14 +186,42 @@ const router = createRouter({
     },
     {
       path: '/results',
-      name: 'results',
       component: ResultView,
-      meta: {
-        label: 'Ergebnisse',
-        hasSidebar: true,
-        hasHeader: true,
-        hasFooter: true,
-      },
+      children: [
+        {
+          path: '',
+          name: 'resultsStats',
+          component: ResultStatsView,
+          meta: {
+            label: 'Ergebnisse',
+            hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
+          },
+        },
+        {
+          path: 'history',
+          name: 'history',
+          component: HistoryView,
+          meta: {
+            label: 'Berechnungsverlauf',
+            hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
+          },
+        },
+        {
+          path: 'evidence',
+          name: 'evidence',
+          component: UserEvidenceView,
+          meta: {
+            label: 'Nachweise',
+            hasSidebar: true,
+            hasHeader: true,
+            hasFooter: true,
+          },
+        },
+      ]
     },
     {
       path: '/about',
