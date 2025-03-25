@@ -59,6 +59,9 @@
     --greensign-700: 164 93% 30%; /* #046C4E */
     --greensign-800: 166 94% 23%; /* #03543F */
     --greensign-900: 168 95% 14%; /* #014737 */
+
+    --v-theme-overlay: transparent;
+    --v-theme-overlay-multiplier: 1;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -115,6 +118,9 @@
     --greensign-700: 164 93% 30%; /* #046C4E */
     --greensign-800: 166 94% 23%; /* #03543F */
     --greensign-900: 168 95% 14%; /* #014737 */
+
+    --v-theme-overlay: transparent;
+    --v-theme-overlay-multiplier: 1;
   }
 }
 @layer base {

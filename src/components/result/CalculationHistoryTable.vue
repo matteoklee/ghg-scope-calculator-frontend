@@ -1,4 +1,7 @@
 <script>
+import 'vuetify/lib/components/VDataTable/VDataTable.css'
+import 'vuetify/lib/components/VBtn/VBtn.css'
+import 'vuetify/lib/components/VIcon/VIcon.css'
 export default {
   name: "CalculationHistoryTable",
   data() {
@@ -85,6 +88,7 @@ export default {
 }
 </script>
 
+
 <template>
   <div class="border rounded-lg mb-8">
     <v-data-table
@@ -160,12 +164,7 @@ export default {
 </template>
 
 <style scoped>
-.v-data-table .v-data-table__checkbox:hover,
-.v-data-table .v-data-table__expand-icon:hover {
-  background-color: transparent !important;
-}
-::v-deep(.v-data-table .v-data-table__checkbox:hover),
-::v-deep(.v-data-table .v-data-table__expand-icon:hover) {
-  background-color: transparent !important;
+.v-btn__overlay {
+  background-color: var(--v-theme-overlay);
 }
 </style>

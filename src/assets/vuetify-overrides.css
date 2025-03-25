@@ -23,3 +23,30 @@
 .v-data-table .v-data-table__expand-icon {
   cursor: pointer; /* oder default, je nach Wunsch */
 }
+
+
+
+.v-selection-control__input:hover {
+  background: transparent !important; /* Entfernt schwarzen Kreis */
+}
+
+.v-selection-control:hover {
+  background-color: transparent !important; /* Kein Overlay beim Hover */
+}
+.v-selection-control__wrapper:hover {
+  background-color: transparent !important; /* Kein Overlay beim Hover */
+}
+.v-selection-control--dirty:hover {
+  background-color: transparent !important; /* Kein Overlay beim Hover */
+}
+
+.v-selection-control--density-default:hover {
+  background-color: transparent !important; /* Kein Overlay beim Hover */
+}
+
+.v-checkbox-btn:hover {
+  background-color: transparent !important; /* Kein Overlay beim Hover */
+}
+.tr {
+  background-color: red !important;
+}
