@@ -2,8 +2,10 @@
 import 'vuetify/lib/components/VDataTable/VDataTable.css'
 import 'vuetify/lib/components/VBtn/VBtn.css'
 import 'vuetify/lib/components/VIcon/VIcon.css'
+import { Button } from '@/components/ui/button/index.js'
 export default {
   name: "CalculationHistoryTable",
+  components: { Button },
   data() {
     return {
       items: [
@@ -159,12 +161,13 @@ export default {
         </tr>
       </template>
     </v-data-table>
+
+    <div class="not-vuetify">
+      <Button class="hover:bg-muted transition-all">Mein Shadcn Button</Button>
+    </div>
   </div>
 
 </template>
 
 <style scoped>
-.v-btn__overlay {
-  background-color: var(--v-theme-overlay);
-}
 </style>
