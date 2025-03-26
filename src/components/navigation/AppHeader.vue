@@ -105,6 +105,12 @@ export default {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" class="w-48">
+            <router-link to="/profile">
+              <DropdownMenuItem class="cursor-pointer">
+                <User class="mr-2 h-4 w-4" />
+                <span>Mein Profil</span>
+              </DropdownMenuItem>
+            </router-link>
             <DropdownMenuItem @click="logout" class="cursor-pointer">
               <Calculator class="mr-2 h-4 w-4" />
               <span>Meine Berechnungen</span>

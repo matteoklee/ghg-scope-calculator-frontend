@@ -19,6 +19,7 @@ import Scope2 from '@/components/collect/scope2/Scope2.vue';
 import HistoryView from '@/views/result/HistoryView.vue'
 import ResultStatsView from '@/views/result/ResultStatsView.vue'
 import UserEvidenceView from '@/views/result/UserEvidenceView.vue'
+import ProfileView from '@/views/profile/ProfileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +55,17 @@ const router = createRouter({
         hasSidebar: false,
         hasHeader: false,
         hasFooter: false,
+      },
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView,
+      meta: {
+        label: 'Benutzerprofil',
+        hasSidebar: true,
+        hasHeader: true,
+        hasFooter: true,
       },
     },
     {
