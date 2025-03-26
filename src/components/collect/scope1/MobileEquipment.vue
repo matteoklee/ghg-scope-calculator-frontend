@@ -3,11 +3,24 @@ import { Button } from '@/components/ui/button/index.js';
 import { ArrowLeft, Info, CircleHelp, Upload, Flame, Lightbulb } from 'lucide-vue-next';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert/index.js';
 import { Input } from '@/components/ui/input/index.js';
-import { Separator } from '@/components/ui/separator/index.js'
+import { Separator } from '@/components/ui/separator/index.js';
 
 export default {
   name: 'MobileEquipment',
-  components: { Separator, Input, AlertDescription, AlertTitle, Alert, ArrowLeft, Button, Info, CircleHelp, Upload, Flame, Lightbulb },
+  components: {
+    Separator,
+    Input,
+    AlertDescription,
+    AlertTitle,
+    Alert,
+    ArrowLeft,
+    Button,
+    Info,
+    CircleHelp,
+    Upload,
+    Flame,
+    Lightbulb,
+  },
 };
 </script>
 
@@ -17,7 +30,7 @@ export default {
       <div class="flex justify-between items-center">
         <div class="mb-6 inline-flex items-center">
           <Flame class="w-8 h-8 mr-2 text-orange-500" />
-          <h1 class="text-4xl ">Mobile Verbrennung</h1>
+          <h1 class="text-4xl">Mobile Verbrennung</h1>
         </div>
         <div>
           <router-link to="/collect">
@@ -62,7 +75,7 @@ export default {
             </div>
             <div>
               <Button variant="outline">
-                <Upload class="w-4 h-4"/>
+                <Upload class="w-4 h-4" />
                 Nachweis hochladen
               </Button>
             </div>
@@ -81,7 +94,7 @@ export default {
             </div>
             <div>
               <Button variant="outline">
-                <Upload class="w-4 h-4"/>
+                <Upload class="w-4 h-4" />
                 Nachweis hochladen
               </Button>
             </div>
@@ -100,7 +113,7 @@ export default {
             </div>
             <div>
               <Button variant="outline">
-                <Upload class="w-4 h-4"/>
+                <Upload class="w-4 h-4" />
                 Nachweis hochladen
               </Button>
             </div>
@@ -112,11 +125,14 @@ export default {
             <div class="flex items-center justify-between">
               <div class="inline-flex items-center">
                 <Lightbulb class="w-4 h-4 mr-2 text-orange-500" />
-                <p class="text-gray-700">Tipp: Aktivitätsbasierte Berechnungen (m³, Liter) sind genauer als ausgabenbasierte (€).</p>
+                <p class="text-gray-700">
+                  Tipp: Aktivitätsbasierte Berechnungen (m³, Liter) sind genauer als
+                  ausgabenbasierte (€).
+                </p>
               </div>
               <div>
                 <Button variant="link">
-                  <CircleHelp class="w-4 h-4"/>
+                  <CircleHelp class="w-4 h-4" />
                   Hilfe
                 </Button>
               </div>

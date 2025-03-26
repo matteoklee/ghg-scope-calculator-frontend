@@ -27,8 +27,9 @@ export default {
         </div>
       </div>
       <p class="text-lg text-gray-700 text-justify mb-4">
-        Erfassen Sie hier alle Emissionen aus der Verbrennung von Brennstoffen in stationären Anlagen wie Kesseln, Öfen,
-        Heizungen und Generatoren. Diese Quellen sind typischerweise in Gebäuden oder festen Anlagen zu finden.
+        Erfassen Sie hier alle Emissionen aus der Verbrennung von Brennstoffen in stationären
+        Anlagen wie Kesseln, Öfen, Heizungen und Generatoren. Diese Quellen sind typischerweise in
+        Gebäuden oder festen Anlagen zu finden.
       </p>
     </div>
     <div class="mt-12">

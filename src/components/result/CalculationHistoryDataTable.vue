@@ -5,18 +5,18 @@ import type {
   ExpandedState,
   SortingState,
   VisibilityState,
-} from '@tanstack/vue-table'
-import { valueUpdater } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
+} from '@tanstack/vue-table';
+import { valueUpdater } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu';
 
-import { Input } from '@/components/ui/input'
+import { Input } from '@/components/ui/input';
 import {
   Table,
   TableBody,
@@ -24,7 +24,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table'
+} from '@/components/ui/table';
 import {
   FlexRender,
   getCoreRowModel,
@@ -33,16 +33,16 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useVueTable,
-} from '@tanstack/vue-table'
-import { ArrowUpDown, ChevronDown } from 'lucide-vue-next'
-import { h, ref } from 'vue'
-import DropdownAction from './DataTableDemoColumn.vue'
+} from '@tanstack/vue-table';
+import { ArrowUpDown, ChevronDown } from 'lucide-vue-next';
+import { h, ref } from 'vue';
+import DropdownAction from './DataTableDemoColumn.vue';
 
 export interface Payment {
-  id: string
-  amount: number
-  status: 'pending' | 'processing' | 'success' | 'failed'
-  email: string
+  id: string;
+  amount: number;
+  status: 'pending' | 'processing' | 'success' | 'failed';
+  email: string;
 }
 
 const data: Payment[] = [
@@ -76,21 +76,25 @@ const data: Payment[] = [
     status: 'failed',
     email: 'carmella@hotmail.com',
   },
-]
+];
 
 const columns: ColumnDef<Payment>[] = [
   {
     id: 'select',
-    header: ({ table }) => h(Checkbox, {
-      'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
-      'onUpdate:modelValue': value => table.toggleAllPageRowsSelected(!!value),
-      'ariaLabel': 'Select all',
-    }),
-    cell: ({ row }) => h(Checkbox, {
-      'modelValue': row.getIsSelected(),
-      'onUpdate:modelValue': value => row.toggleSelected(!!value),
-      'ariaLabel': 'Select row',
-    }),
+    header: ({ table }) =>
+      h(Checkbox, {
+        modelValue:
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && 'indeterminate'),
+        'onUpdate:modelValue': (value) => table.toggleAllPageRowsSelected(!!value),
+        ariaLabel: 'Select all',
+      }),
+    cell: ({ row }) =>
+      h(Checkbox, {
+        modelValue: row.getIsSelected(),
+        'onUpdate:modelValue': (value) => row.toggleSelected(!!value),
+        ariaLabel: 'Select row',
+      }),
     enableSorting: false,
     enableHiding: false,
   },
@@ -102,10 +106,14 @@ const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: 'email',
     header: ({ column }) => {
-      return h(Button, {
-        variant: 'ghost',
-        onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
-      }, () => ['Email', h(ArrowUpDown, { class: 'ml-2 h-4 w-4' })])
+      return h(
+        Button,
+        {
+          variant: 'ghost',
+          onClick: () => column.toggleSorting(column.getIsSorted() === 'asc'),
+        },
+        () => ['Email', h(ArrowUpDown, { class: 'ml-2 h-4 w-4' })],
+      );
     },
     cell: ({ row }) => h('div', { class: 'lowercase' }, row.getValue('email')),
   },
@@ -113,36 +121,36 @@ const columns: ColumnDef<Payment>[] = [
     accessorKey: 'amount',
     header: () => h('div', { class: 'text-right' }, 'Amount'),
     cell: ({ row }) => {
-      const amount = Number.parseFloat(row.getValue('amount'))
+      const amount = Number.parseFloat(row.getValue('amount'));
 
       // Format the amount as a dollar amount
       const formatted = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
-      }).format(amount)
+      }).format(amount);
 
-      return h('div', { class: 'text-right font-medium' }, formatted)
+      return h('div', { class: 'text-right font-medium' }, formatted);
     },
   },
   {
     id: 'actions',
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original
+      const payment = row.original;
 
       return h(DropdownAction, {
         payment,
         onExpand: row.toggleExpanded,
-      })
+      });
     },
   },
-]
+];
 
-const sorting = ref<SortingState>([])
-const columnFilters = ref<ColumnFiltersState>([])
-const columnVisibility = ref<VisibilityState>({})
-const rowSelection = ref({})
-const expanded = ref<ExpandedState>({})
+const sorting = ref<SortingState>([]);
+const columnFilters = ref<ColumnFiltersState>([]);
+const columnVisibility = ref<VisibilityState>({});
+const rowSelection = ref({});
+const expanded = ref<ExpandedState>({});
 
 const table = useVueTable({
   data,
@@ -152,19 +160,29 @@ const table = useVueTable({
   getSortedRowModel: getSortedRowModel(),
   getFilteredRowModel: getFilteredRowModel(),
   getExpandedRowModel: getExpandedRowModel(),
-  onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
-  onColumnFiltersChange: updaterOrValue => valueUpdater(updaterOrValue, columnFilters),
-  onColumnVisibilityChange: updaterOrValue => valueUpdater(updaterOrValue, columnVisibility),
-  onRowSelectionChange: updaterOrValue => valueUpdater(updaterOrValue, rowSelection),
-  onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
+  onSortingChange: (updaterOrValue) => valueUpdater(updaterOrValue, sorting),
+  onColumnFiltersChange: (updaterOrValue) => valueUpdater(updaterOrValue, columnFilters),
+  onColumnVisibilityChange: (updaterOrValue) => valueUpdater(updaterOrValue, columnVisibility),
+  onRowSelectionChange: (updaterOrValue) => valueUpdater(updaterOrValue, rowSelection),
+  onExpandedChange: (updaterOrValue) => valueUpdater(updaterOrValue, expanded),
   state: {
-    get sorting() { return sorting.value },
-    get columnFilters() { return columnFilters.value },
-    get columnVisibility() { return columnVisibility.value },
-    get rowSelection() { return rowSelection.value },
-    get expanded() { return expanded.value },
+    get sorting() {
+      return sorting.value;
+    },
+    get columnFilters() {
+      return columnFilters.value;
+    },
+    get columnVisibility() {
+      return columnVisibility.value;
+    },
+    get rowSelection() {
+      return rowSelection.value;
+    },
+    get expanded() {
+      return expanded.value;
+    },
   },
-})
+});
 </script>
 
 <template>
@@ -174,7 +192,7 @@ const table = useVueTable({
         class="max-w-sm"
         placeholder="Email filtern ..."
         :model-value="table.getColumn('email')?.getFilterValue() as string"
-        @update:model-value=" table.getColumn('email')?.setFilterValue($event)"
+        @update:model-value="table.getColumn('email')?.setFilterValue($event)"
       />
       <DropdownMenu>
         <DropdownMenuTrigger as-child>
@@ -188,9 +206,11 @@ const table = useVueTable({
             :key="column.id"
             class="capitalize"
             :model-value="column.getIsVisible()"
-            @update:model-value="(value) => {
-              column.toggleVisibility(!!value)
-            }"
+            @update:model-value="
+              (value) => {
+                column.toggleVisibility(!!value);
+              }
+            "
           >
             {{ column.id }}
           </DropdownMenuCheckboxItem>
@@ -202,7 +222,11 @@ const table = useVueTable({
         <TableHeader>
           <TableRow v-for="headerGroup in table.getHeaderGroups()" :key="headerGroup.id">
             <TableHead v-for="header in headerGroup.headers" :key="header.id">
-              <FlexRender v-if="!header.isPlaceholder" :render="header.column.columnDef.header" :props="header.getContext()" />
+              <FlexRender
+                v-if="!header.isPlaceholder"
+                :render="header.column.columnDef.header"
+                :props="header.getContext()"
+              />
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -223,10 +247,7 @@ const table = useVueTable({
           </template>
 
           <TableRow v-else>
-            <TableCell
-              :colspan="columns.length"
-              class="h-24 text-center"
-            >
+            <TableCell :colspan="columns.length" class="h-24 text-center">
               Keine Daten vorhanden.
             </TableCell>
           </TableRow>

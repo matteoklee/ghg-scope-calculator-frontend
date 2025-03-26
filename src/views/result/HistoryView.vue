@@ -1,11 +1,11 @@
 <script>
-import { Download } from 'lucide-vue-next'
-import { Button } from '@/components/ui/button/index.js'
-import CalculationHistoryDataTable from '@/components/result/CalculationHistoryDataTable.vue'
+import { Download } from 'lucide-vue-next';
+import { Button } from '@/components/ui/button/index.js';
+import CalculationHistoryDataTable from '@/components/result/CalculationHistoryDataTable.vue';
 export default {
   name: 'HistoryView',
-  components: { CalculationHistoryDataTable, Button, Download }
-}
+  components: { CalculationHistoryDataTable, Button, Download },
+};
 </script>
 
 <template>
@@ -34,6 +34,4 @@ export default {
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

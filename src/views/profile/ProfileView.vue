@@ -1,14 +1,30 @@
 <script>
 import { Button } from '@/components/ui/button/index.js';
 import { ArrowLeft, MapPin, Globe, Phone, LogOut, Mail, Save } from 'lucide-vue-next';
-import { Badge } from '@/components/ui/badge/index.js'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs/index.js'
-import { Label } from '@/components/ui/label/index.js'
-import { Input } from '@/components/ui/input/index.js'
+import { Badge } from '@/components/ui/badge/index.js';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs/index.js';
+import { Label } from '@/components/ui/label/index.js';
+import { Input } from '@/components/ui/input/index.js';
 
 export default {
   name: 'ProfileView',
-  components: { Input, Label, TabsContent, TabsTrigger, TabsList, Tabs, Badge, ArrowLeft, Button, MapPin, Globe, Phone, LogOut, Mail, Save },
+  components: {
+    Input,
+    Label,
+    TabsContent,
+    TabsTrigger,
+    TabsList,
+    Tabs,
+    Badge,
+    ArrowLeft,
+    Button,
+    MapPin,
+    Globe,
+    Phone,
+    LogOut,
+    Mail,
+    Save,
+  },
 };
 </script>
 
@@ -36,12 +52,15 @@ export default {
       </div>
       <div class="mt-8">
         <div class="grid xl:grid-cols-4 grid-cols-1 gap-8">
-
           <div class="">
             <div class="border p-8 rounded-lg shadow">
               <div class="flex flex-col justify-center items-center">
                 <div class="mb-2 h-24 w-24">
-                  <div class="rounded-full bg-muted w-full h-full flex justify-center items-center text-2xl">MK</div>
+                  <div
+                    class="rounded-full bg-muted w-full h-full flex justify-center items-center text-2xl"
+                  >
+                    MK
+                  </div>
                 </div>
                 <div class="text-center mb-6">
                   <h1 class="text-2xl font-bold">Max Mustermann</h1>
@@ -52,19 +71,19 @@ export default {
 
                 <div class="space-y-1 mb-4 text-gray-700">
                   <div class="inline-flex items-center">
-                    <Mail class="mr-2 h-4 w-4"/>
+                    <Mail class="mr-2 h-4 w-4" />
                     <span>max.mustermann@example.de</span>
                   </div>
                   <div class="inline-flex items-center">
-                    <Phone class="mr-2 h-4 w-4"/>
+                    <Phone class="mr-2 h-4 w-4" />
                     <span>+49 123 456789</span>
                   </div>
                   <div class="inline-flex items-center">
-                    <MapPin class="mr-2 h-4 w-4"/>
+                    <MapPin class="mr-2 h-4 w-4" />
                     <span>Beispielstraße 123, 10115 Berlin</span>
                   </div>
                   <div class="inline-flex items-center">
-                    <Globe class="mr-2 h-4 w-4"/>
+                    <Globe class="mr-2 h-4 w-4" />
                     <span>www.hotel-beispiel.de</span>
                   </div>
                 </div>
@@ -74,7 +93,6 @@ export default {
                     <span>Abmelden</span>
                   </Button>
                 </div>
-
               </div>
             </div>
           </div>
@@ -83,12 +101,8 @@ export default {
             <div class="w-full">
               <Tabs default-value="account" class="w-full" orientation="horizontal">
                 <TabsList class="grid w-full grid-cols-1">
-                  <TabsTrigger value="account">
-                    Profil
-                  </TabsTrigger>
-                  <TabsTrigger value="settings">
-                    Einstellungen
-                  </TabsTrigger>
+                  <TabsTrigger value="account"> Profil </TabsTrigger>
+                  <TabsTrigger value="settings"> Einstellungen </TabsTrigger>
                 </TabsList>
                 <TabsContent value="account" class="mt-6">
                   <div class="w-full border rounded-lg shadow p-8 mb-4">
@@ -108,7 +122,11 @@ export default {
                         </div>
                         <div>
                           <Label for="position">Position</Label>
-                          <Input id="position" type="text" placeholder="Nachhaltigkeitsbeauftragter" />
+                          <Input
+                            id="position"
+                            type="text"
+                            placeholder="Nachhaltigkeitsbeauftragter"
+                          />
                         </div>
                         <div>
                           <Label for="number">Telefon</Label>
@@ -141,7 +159,11 @@ export default {
                         </div>
                         <div>
                           <Label for="position">Unternehmensgröße</Label>
-                          <Input id="position" type="text" placeholder="Mittel (50-249 Mitarbeiter)" />
+                          <Input
+                            id="position"
+                            type="text"
+                            placeholder="Mittel (50-249 Mitarbeiter)"
+                          />
                         </div>
                         <div>
                           <Label for="number">Webseite</Label>
@@ -175,7 +197,6 @@ export default {
                 </TabsContent>
               </Tabs>
             </div>
-
           </div>
         </div>
       </div>

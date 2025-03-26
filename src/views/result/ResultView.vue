@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'ResultView'
-}
+  name: 'ResultView',
+};
 </script>
 
 <template>

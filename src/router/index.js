@@ -16,11 +16,11 @@ import OrganisationalDataView from '@/views/collect/OrganisationalDataView.vue';
 import StationaryEquipment from '@/components/collect/scope1/StationaryEquipment.vue';
 import Scope1 from '@/components/collect/scope1/Scope1.vue';
 import Scope2 from '@/components/collect/scope2/Scope2.vue';
-import HistoryView from '@/views/result/HistoryView.vue'
-import ResultStatsView from '@/views/result/ResultStatsView.vue'
-import UserEvidenceView from '@/views/result/UserEvidenceView.vue'
-import ProfileView from '@/views/profile/ProfileView.vue'
-import MobileEquipment from '@/components/collect/scope1/MobileEquipment.vue'
+import HistoryView from '@/views/result/HistoryView.vue';
+import ResultStatsView from '@/views/result/ResultStatsView.vue';
+import UserEvidenceView from '@/views/result/UserEvidenceView.vue';
+import ProfileView from '@/views/profile/ProfileView.vue';
+import MobileEquipment from '@/components/collect/scope1/MobileEquipment.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -245,7 +245,7 @@ const router = createRouter({
             hasFooter: true,
           },
         },
-      ]
+      ],
     },
     {
       path: '/about',

@@ -1,10 +1,10 @@
 <script>
-import { Download } from 'lucide-vue-next'
-import { Button } from '@/components/ui/button/index.js'
+import { Download } from 'lucide-vue-next';
+import { Button } from '@/components/ui/button/index.js';
 export default {
   name: 'UserEvidenceView',
-  components: { Button, Download }
-}
+  components: { Button, Download },
+};
 </script>
 
 <template>
@@ -26,12 +26,9 @@ export default {
           Übersicht aller hochgeladenen Nachweise und dessen Status.
         </p>
       </div>
-      <div class="mt-8">
-      </div>
+      <div class="mt-8"></div>
     </div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
