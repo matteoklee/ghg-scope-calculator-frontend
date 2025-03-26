@@ -21,7 +21,7 @@ export default {
             <h1 class="text-4xl mb-6">Benutzerprofil</h1>
           </div>
           <div>
-            <router-link to="/dashboard">
+            <router-link to="/">
               <Button variant="">
                 <ArrowLeft class="w-4 h-4"></ArrowLeft>
                 <span>Zurück</span>

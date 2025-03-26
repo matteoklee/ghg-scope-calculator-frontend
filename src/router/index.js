@@ -20,6 +20,7 @@ import HistoryView from '@/views/result/HistoryView.vue'
 import ResultStatsView from '@/views/result/ResultStatsView.vue'
 import UserEvidenceView from '@/views/result/UserEvidenceView.vue'
 import ProfileView from '@/views/profile/ProfileView.vue'
+import MobileEquipment from '@/components/collect/scope1/MobileEquipment.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -137,6 +138,17 @@ const router = createRouter({
               component: StationaryEquipment,
               meta: {
                 label: 'stationary-equipment',
+                hasSidebar: true,
+                hasHeader: true,
+                hasFooter: true,
+              },
+            },
+            {
+              path: 'mobile-equipment',
+              name: 'mobile-equipment',
+              component: MobileEquipment,
+              meta: {
+                label: 'mobile-equipment',
                 hasSidebar: true,
                 hasHeader: true,
                 hasFooter: true,

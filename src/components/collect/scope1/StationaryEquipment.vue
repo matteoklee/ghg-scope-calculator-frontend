@@ -15,7 +15,7 @@ export default {
     <div class="">
       <div class="flex justify-between items-center">
         <div>
-          <h1 class="text-4xl mb-6">Mobile Verbrennung</h1>
+          <h1 class="text-4xl mb-6">Stationäre Verbrennung</h1>
         </div>
         <div>
           <router-link to="/collect">
@@ -27,8 +27,8 @@ export default {
         </div>
       </div>
       <p class="text-lg text-gray-700 text-justify mb-4">
-        Emissionen aus der Verbrennung von Kraftstoffen in unternehmenseigenen oder kontrollierten
-        Fahrzeugen.
+        Erfassen Sie hier alle Emissionen aus der Verbrennung von Brennstoffen in stationären Anlagen wie Kesseln, Öfen,
+        Heizungen und Generatoren. Diese Quellen sind typischerweise in Gebäuden oder festen Anlagen zu finden.
       </p>
     </div>
     <div class="mt-12">
