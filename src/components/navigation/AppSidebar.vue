@@ -293,7 +293,7 @@ export default {
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton>
+              <SidebarMenuButton class="px-3 py-5">
                 <router-link to="/" class="flex items-center">
                   <Grip class="mr-2 h-4 w-4 flex-shrink-0" />
                   <span class="font-medium truncate text-sm text-black">Überblick</span>
@@ -321,7 +321,7 @@ export default {
           <SidebarMenu>
             <div v-if="!scope.items">
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton asChild class="hover:bg-gray-200 px-3 py-5">
                   <router-link :to="scope.path" class="flex items-center">
                     <component class="mr-2 h-4 w-4 flex-shrink-0" :is="scope.icon" />
                     <span class="truncate text-sm font-medium text-black">{{ scope.title }}</span>
@@ -333,7 +333,7 @@ export default {
               <Collapsible :open="openStates[index]" @update:open="toggleOpen(index)" class="">
                 <SidebarMenuItem>
                   <CollapsibleTrigger asChild>
-                    <SidebarMenuButton class="w-full justify-start px-3 py-5 hover:bg-gray-100">
+                    <SidebarMenuButton class="w-full justify-start px-3 py-5 hover:bg-gray-200">
                       <ChevronDown v-if="openStates[index]" class="h-4 w-4 flex-shrink-0" />
                       <ChevronRight v-else class="h-4 w-4 flex-shrink-0" />
                       <div class="flex items-center">
@@ -350,8 +350,8 @@ export default {
                         <div
                           class="flex items-center p-2 rounded-md transition-all duration-100"
                           :class="{
-                            'text-green-700 bg-green-100 font-bold': route.path === item.path,
-                            'hover:bg-green-100 text-black': route.path !== item.path,
+                            'text-black font-bold border border-primary': route.path === item.path,
+                            'hover:bg-gray-200': route.path !== item.path,
                           }"
                         >
                           <component class="mr-2 h-4 w-4 flex-shrink-0" :is="item.icon" />
