@@ -115,9 +115,9 @@ export default {
               <Calculator class="mr-2 h-4 w-4" />
               <span>Meine Berechnungen</span>
             </DropdownMenuItem>
-            <DropdownMenuItem @click="logout" class="cursor-pointer">
+            <DropdownMenuItem @click="logout" class="cursor-pointer text-destructive">
               <LogOut class="mr-2 h-4 w-4" />
-              <span>Abmelden</span>
+              <span class="">Abmelden</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

@@ -23,6 +23,7 @@ import {
   ThermometerSun,
   Grip,
   Copyright,
+  LogOut,
 } from 'lucide-vue-next';
 import {
   Sidebar,
@@ -46,10 +47,13 @@ import {
 } from '@/components/ui/collapsible/index.js';
 
 import { useRoute } from 'vue-router';
+import { Button } from '@/components/ui/button/index.js'
 
 export default {
   name: 'AppSidebar',
   components: {
+    Button,
+    LogOut,
     SidebarFooter,
     SidebarHeader,
     SidebarSeparator,
@@ -375,10 +379,14 @@ export default {
     <SidebarFooter>
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton class="">
-            <router-link to="/" class="flex items-center">
+          <SidebarMenuButton class="flex justify-center items-center">
+            <router-link to="/" class="inline-flex items-center text-destructive">
+              <LogOut class="mr-2 h-4 w-4" />
+              <span class="">Abmelden</span>
+              <!--
               <Copyright class="mr-2 h-4 w-4 flex-shrink-0" />
               <span class="text-sm">K&S Software GbR</span>
+              -->
             </router-link>
           </SidebarMenuButton>
         </SidebarMenuItem>

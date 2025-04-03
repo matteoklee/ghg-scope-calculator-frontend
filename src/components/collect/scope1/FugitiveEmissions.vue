@@ -78,8 +78,8 @@ export default {
 <template>
   <div class="m-12">
     <div class="">
-      <div class="flex justify-between items-center">
-        <div class="mb-6 inline-flex items-center">
+      <div class="flex justify-between items-center mb-6">
+        <div class="inline-flex items-center">
           <router-link to="/collect">
             <Button variant="outline" class="mr-2" size="icon">
               <ArrowLeft class="w-4 h-4"></ArrowLeft>
