@@ -21,6 +21,7 @@ import ResultStatsView from '@/views/result/ResultStatsView.vue';
 import UserEvidenceView from '@/views/result/UserEvidenceView.vue';
 import ProfileView from '@/views/profile/ProfileView.vue';
 import MobileEquipment from '@/components/collect/scope1/MobileEquipment.vue';
+import FugitiveEmissions from '@/components/collect/scope1/FugitiveEmissions.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -149,6 +150,17 @@ const router = createRouter({
               component: MobileEquipment,
               meta: {
                 label: 'mobile-equipment',
+                hasSidebar: true,
+                hasHeader: true,
+                hasFooter: true,
+              },
+            },
+            {
+              path: 'fugitive-emissions',
+              name: 'fugitive-emissions',
+              component: FugitiveEmissions,
+              meta: {
+                label: 'fugitive-emissions',
                 hasSidebar: true,
                 hasHeader: true,
                 hasFooter: true,
