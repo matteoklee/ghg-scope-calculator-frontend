@@ -173,7 +173,7 @@ export default {
           </div>
         </div>
       </div>
-      <div class="mt-8">
+      <div class="mt-8 mb-6">
         <div class="border shadow p-8 rounded-lg">
           <p class="text-2xl font-semibold mb-2">Das Greenhouse Gas Protocol</p>
           <p class="text-sm text-gray-500 text-justify mb-6">

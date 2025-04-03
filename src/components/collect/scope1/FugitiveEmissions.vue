@@ -59,7 +59,6 @@ export default {
       data: [
         { id: 1, fuelType: 'Erdgas', quantity: '55', unit: '' },
         { id: 2, fuelType: 'Heizöl', quantity: '66', unit: '' },
-        { id: 3, fuelType: 'Kohle', quantity: '88', unit: '' },
       ],
       fuelTypes: ['Erdgas', 'Heizöl', 'Kohle', 'Holz', 'Diesel', 'Benzin'],
       units: ['m³', 'Liter', 'kg', 't', 'kWh', 'MWh'],
@@ -99,22 +98,19 @@ export default {
         </div>
       </div>
       <p class="text-lg text-gray-700 text-justify mb-4 max-w-screen-lg">
-        Erfassen Sie hier alle Emissionen aus der Verbrennung von Kraftstoffen in
-        unternehmenseigenen oder kontrollierten Fahrzeugen, wie Firmenwagen, LKWs, Gabelstapler oder
-        andere mobile Maschinen.
+        Flüchtige Emissionen sind unbeabsichtigte Freisetzungen von Treibhausgasen, wie z.B. Leckagen
+        aus Kälteanlagen (Kältemittel), Feuerlöschern oder Isoliermaterial in elektrischen Schaltanlagen.
+        Kältemittel haben oft ein sehr hohes Treibhauspotenzial (GWP).
       </p>
     </div>
     <div class="mt-10">
       <div class="mb-4">
-        <Alert variant="">
+        <Alert variant="destructive">
           <Info class="w-4 h-4" />
-          <AlertTitle>Eingabehilfe</AlertTitle>
+          <AlertTitle>Wichtiger Hinweis zu Kältemitteln</AlertTitle>
           <AlertDescription>
-            Erfassen Sie hier alle Brennstoffe, die in stationären Anlagen wie Heizungen, Öfen oder
-            Generatoren verbrannt werden. Für jeden Brennstoff können Sie eine aktivitätsbasierte
-            (tatsächlicher Verbrauch) oder ausgabenbasierte (Kosten) Berechnung wählen.
-            Aktivitätsbasierte Berechnungen sind genauer, ausgabenbasierte Berechnungen sind
-            einfacher, wenn Sie nur die Kosten kennen.
+            Kältemittel haben oft ein sehr hohes Treibhauspotenzial (GWP). Ein Kilogramm R-404A entspricht
+            beispielsweise 3.922 kg CO₂. Selbst kleine Leckagen können daher erheblich zu Ihren Gesamtemissionen beitragen.
           </AlertDescription>
         </Alert>
       </div>
@@ -130,7 +126,7 @@ export default {
       <div class="border shadow rounded-lg border-l-4 border-l-indigo-500 mb-8">
         <div v-for="(item, index) in data" :key="item.id || index">
           <div class="p-8">
-            <div class="grid xl:grid-cols-3 gap-x-8 gap-y-4 grid-cols-1">
+            <div class="grid xl:grid-cols-3 gap-x-4 gap-y-2 grid-cols-1">
               <div class="flex items-center">
                 <Label class="text-md">Brennstofftyp<span class="text-destructive">*</span></Label>
                 <CircleHelp class="w-4 h-4 ml-2" />
@@ -176,6 +172,12 @@ export default {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
+              </div>
+              <div class="xl:col-start-2 hidden xl:block">
+                <p class="text-sm text-gray-500">Geben Sie die verbrauchte Menge an</p>
+              </div>
+              <div class="xl:col-start-3 hidden xl:block">
+                <p class="text-sm text-gray-500">Wählen Sie die passende Einheit</p>
               </div>
             </div>
 
