@@ -20,7 +20,7 @@ export default {
       </p>
     </div>
     <div class="mt-8">
-      <Tabs default-value="account" class="">
+      <Tabs default-value="general" class="">
         <TabsList class="grid w-full grid-cols-2">
           <TabsTrigger value="general">
             Allgemeine Informationen

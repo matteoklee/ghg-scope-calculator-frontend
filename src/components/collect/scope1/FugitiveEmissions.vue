@@ -105,7 +105,7 @@ export default {
     </div>
     <div class="mt-10">
       <div class="mb-4">
-        <Alert variant="destructive">
+        <Alert> <!-- variant="destructive" -->
           <Info class="w-4 h-4" />
           <AlertTitle>Wichtiger Hinweis zu Kältemitteln</AlertTitle>
           <AlertDescription>

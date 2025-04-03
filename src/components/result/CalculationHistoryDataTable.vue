@@ -119,7 +119,7 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: 'amount',
-    header: () => h('div', { class: 'text-right' }, 'Amount'),
+    header: () => h('div', { class: 'text-center' }, 'Amount'),
     cell: ({ row }) => {
       const amount = Number.parseFloat(row.getValue('amount'));
 
@@ -129,19 +129,24 @@ const columns: ColumnDef<Payment>[] = [
         currency: 'USD',
       }).format(amount);
 
-      return h('div', { class: 'text-right font-medium' }, formatted);
+      return h('div', { class: 'text-center font-medium' }, formatted);
     },
   },
   {
     id: 'actions',
     enableHiding: false,
+    header: () => h('div', { class: 'text-right' }, 'Aktionen'),
     cell: ({ row }) => {
       const payment = row.original;
 
-      return h(DropdownAction, {
-        payment,
-        onExpand: row.toggleExpanded,
-      });
+      return h(
+        'div',
+        { class: 'text-right' },
+        h(DropdownAction, {
+          payment,
+          onExpand: row.toggleExpanded,
+        }),
+      );
     },
   },
 ];
