@@ -1,12 +1,7 @@
 <script setup>
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-vue-next';
-import {
-  SelectItem,
-  SelectItemIndicator,
-  SelectItemText,
-  useForwardProps,
-} from 'reka-ui';
+import { SelectItem, SelectItemIndicator, SelectItemText, useForwardProps } from 'reka-ui';
 import { computed } from 'vue';
 
 const props = defineProps({

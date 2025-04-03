@@ -21,7 +21,7 @@ import ResultStatsView from '@/views/result/ResultStatsView.vue';
 import UserEvidenceView from '@/views/result/UserEvidenceView.vue';
 import ProfileView from '@/views/profile/ProfileView.vue';
 import MobileEquipment from '@/components/collect/scope1/MobileEquipment.vue';
-import FugitiveEmissions from '@/components/collect/scope1/FugitiveEmissions.vue'
+import FugitiveEmissions from '@/components/collect/scope1/FugitiveEmissions.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

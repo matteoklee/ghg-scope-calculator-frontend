@@ -1,11 +1,6 @@
 <script setup>
 import { cn } from '@/lib/utils';
-import {
-  SelectContent,
-  SelectPortal,
-  SelectViewport,
-  useForwardPropsEmits,
-} from 'reka-ui';
+import { SelectContent, SelectPortal, SelectViewport, useForwardPropsEmits } from 'reka-ui';
 import { computed } from 'vue';
 import { SelectScrollDownButton, SelectScrollUpButton } from '.';
 
@@ -36,11 +31,7 @@ const props = defineProps({
   as: { type: null, required: false },
   class: { type: null, required: false },
 });
-const emits = defineEmits([
-  'closeAutoFocus',
-  'escapeKeyDown',
-  'pointerDownOutside',
-]);
+const emits = defineEmits(['closeAutoFocus', 'escapeKeyDown', 'pointerDownOutside']);
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;

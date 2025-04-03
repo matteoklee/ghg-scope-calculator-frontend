@@ -10,7 +10,7 @@ import {
   Plus,
   Minus,
   Trash,
-  Paperclip
+  Paperclip,
 } from 'lucide-vue-next';
 import { Button } from '@/components/ui/button/index.js';
 import { Input } from '@/components/ui/input/index.js';
@@ -19,10 +19,12 @@ import { Label } from '@/components/ui/label/index.js';
 import {
   Select,
   SelectContent,
-  SelectGroup, SelectItem, SelectLabel,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
   SelectTrigger,
-  SelectValue
-} from '@/components/ui/select/index.js'
+  SelectValue,
+} from '@/components/ui/select/index.js';
 
 export default {
   name: 'FugitiveEmissions',
@@ -69,7 +71,7 @@ export default {
     },
     removeData(index) {
       this.data.splice(index, 1);
-    }
+    },
   },
 };
 </script>
