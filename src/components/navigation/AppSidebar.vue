@@ -48,6 +48,7 @@ import {
 
 import { useRoute } from 'vue-router';
 import { Button } from '@/components/ui/button/index.js'
+import { useSidebar } from '@/components/ui/sidebar/index.js'
 
 export default {
   name: 'AppSidebar',
@@ -96,8 +97,14 @@ export default {
   },
   setup() {
     const route = useRoute();
+    const { toggleSidebar, open } = useSidebar();
+    console.log(toggleSidebar);
+    console.log(open);
+
     return {
       route,
+      toggleSidebar,
+      open
     };
   },
   data() {
@@ -269,13 +276,17 @@ export default {
     <SidebarHeader>
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton class="py-8">
-            <router-link to="/" class="flex items-center">
+          <SidebarMenuButton class="py-0">
+            <router-link to="/" class="inline-flex justify-start items-center">
+              <img src="@/assets/logo%20zugeschnitten.png" :class="open ? 'h-7 mr-2' : 'h-auto'" alt="Logo" />
+              <p v-if="open" class="text-xl text-primary font-semibold truncate">CO2eRechner</p>
+              <!--
               <Calculator class="mr-2 h-6 w-6 flex-shrink-0" />
               <div class="flex flex-col items-start justify-start text-left truncate">
                 <p class="text-xl text-primary font-semibold">CO2e Rechner</p>
                 <p>nach GHG Protokoll</p>
               </div>
+              -->
             </router-link>
           </SidebarMenuButton>
         </SidebarMenuItem>
@@ -379,14 +390,14 @@ export default {
     <SidebarFooter>
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton class="flex justify-center items-center">
-            <router-link to="/" class="inline-flex items-center text-destructive">
-              <LogOut class="mr-2 h-4 w-4" />
-              <span class="">Abmelden</span>
+          <SidebarMenuButton class="flex justify-start items-center">
+            <router-link to="/" class="inline-flex items-center"> <!-- text-destructive -->
               <!--
+              <LogOut class="mr-2 h-4 w-4 flex-shrink-0" />
+              <span class="text-sm">Abmelden</span>
+              -->
               <Copyright class="mr-2 h-4 w-4 flex-shrink-0" />
               <span class="text-sm">K&S Software GbR</span>
-              -->
             </router-link>
           </SidebarMenuButton>
         </SidebarMenuItem>
